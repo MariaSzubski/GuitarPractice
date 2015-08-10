@@ -8,6 +8,8 @@ Chord Changes
 
 /* ---------------------------------------- Global */
 
+@import url(http://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Roboto+Condensed:400,700,300);
+
 *{
 	margin:	0px;
 	border:	0px;
@@ -21,8 +23,12 @@ a{
 
 body{
 	background-color:#eee;
-	font-family: Verdana, sans-serif;
+	font-family: 'Source Serif Pro', serif;
 }
+
+hgroup	{text-align:center;}
+h1			{font-size: 1.75em; font-weight: 600;}
+h2, h3	{font-size: .875em; font-weight: 400;}
 
 /* ---------------------------------------- Home & Nav */
 
@@ -52,36 +58,121 @@ body{
 
 /* ---------------------------------------- Chord Changes */
 
-#chordRecords{
-	width: 92%;
-	margin: auto;
-	padding:auto;
 
+/* ---------------------------------------- Songs */
+
+header{
+	display: flex;
+	align-items:flex-start;
+	margin-bottom: 1em;
 }
 
-.chordChg{
-	display: inline-block;
-	background-color: #FFF;
-	border: 1px solid #ddd;
-	width:110px;
-	height: 100px;
-	margin:2px;
-	box-sizing: border-box;
+header hgroup	{flex:1; order:2;}
+#back				{order:1; width:24px; margin: .5em 0em 0em .5em;}
+#add				{order:3; width:24px; margin: .5em .5em 0em 0;}
+
+
+/*	_________ Songs List*/
+
+#songList li{
+   display: flex;
+	padding: 1em;
+	border-bottom: 1px solid #aaa;
+	align-items: center;
 }
 
-.chordChg h3{
-	font-size: 2em;
+#songList li:hover{
+	background-color: #fff;
+	cursor: pointer;
+}
+
+#songList li:first-child{
+	border-top: 1px solid #aaa;
+}
+
+#songList img{
+	width: 1em;
+}
+
+.songId{
+	flex:1;
+}
+.songId p:first-of-type{
+	font-size: 1.25em;
+}
+
+.songId p:last-of-type{
+	font-size: .8125em;
+	color:#555;
+	line-height: 1.75em;
+}
+
+/*	_________ Songs Details */
+
+#songDetails h4 {
+	font-size: .875em; font-weight: 400;
 	text-align: center;
 }
 
-.chordChg h4{
-	font-size: 1em;
-	font-family: serif;
+.chordSection, #strum{
+	padding: .5em 1em;
+}
+
+.barContainer{
+	font-family: 'Roboto Condensed';
+	font-size: 1.75em;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.barContainer ul{
+	display: flex;
+	justify-content: center;
+	width: 90px;
+	border-left: 1px solid #CCC;
+	margin-top: .25em;
+	margin-bottom: .25em;
+	padding-top: .2em;
+	padding-bottom:.05em;
+}
+
+.barContainer ul:last-of-type{
+	border-right: 1px solid #CCC;
+}
+
+.barContainer li{
+	display: block;
+	float:left;
+	list-style-type: none;
 	text-align: center;
 }
 
+.barContainer sub{
+	display: block;
+	font-size: .375em;
+	margin-top: -.625em;
+}
 
-/* ---------------------------------------- New Song */
+#strum ul{
+	display: flex;
+	justify-content: center;
+	margin-top: .5em;
+}
+
+#strum li{
+	display: block;
+	float:left;
+	list-style-type: none;
+	text-align: center;
+	margin: 0 .0625em;
+}
+
+#strum sub{
+	display: block;
+	margin-top: -.125em;
+}
+
+/*	_________ Songs Details */
 
 #newSong p{
 	font-family: serif;

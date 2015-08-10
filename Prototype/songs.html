@@ -6,24 +6,210 @@
 		<link rel="stylesheet" href="css/style.css" media="" charset="utf-8">
 	</head>
 	<body>
-		<nav>
-			<!-- nav links -->
-			Songs
-			<a href="#" title="addNew"><img src="img/add.png"></a>
-		</nav>
+		<header>
+			<hgroup>
+				<h1>Songs</h1>
+				<h2>Artist</h2>
+				<h3><span id="capo">3rd Fret</span> • <span id="bpm">120 BPM</span></h3>
+			</hgroup>
+			<a href="#" id="back" title="back"><img src="img/back.svg"></a>
+			<a href="#" id="add" title="addEdit"><img src="img/edit.svg"></a>
+		</header>
 		<main>
-			<section class="songItem">
-				<h2>Song Title</h2>
-				<h3>Artist</h3>
+<!--																	Song List -->
+			<section id="songList">
+				<ul>
+					<li>
+						<div class="songId">
+							<p>Song Title</p>
+							<p>Song Artist</p>
+						</div>
+						<img src="img/next.svg">
+					</li>
+					<li>
+						<div class="songId">
+							<p>Song Title</p>
+							<p>Song Artist</p>
+						</div>
+						<img src="img/next.svg">
+					</li>
+					<li>
+						<div class="songId">
+							<p>Song Title</p>
+							<p>Song Artist</p>
+						</div>
+						<img src="img/next.svg">
+					</li>
+					<li>
+						<div class="songId">
+							<p>Song Title</p>
+							<p>Song Artist</p>
+						</div>
+						<img src="img/next.svg">
+					</li>
+				</ul>
 			</section>
-			<section class="songItem">
-				<h2>Song Title</h2>
-				<h3>Artist</h3>
-			</section>
-			<section class="songItem">
-				<h2>Song Title</h2>
-				<h3>Artist</h3>
-			</section>
+
+<!--																	Song Details -->
+			<article id="songDetails">
+				<section id="chords">
+					<section class="chordSection">
+						<h4>Verse</h4>
+						<div class="barContainer">
+							<ul>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+							</ul>
+							<ul>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+							</ul>
+							<ul>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+							</ul>
+							<ul>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+							</ul>
+							<ul>
+								<li>E<sub>&nbsp;</sub></li>
+								<li>E<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+							</ul>
+							<ul>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>E<sub>&nbsp;</sub></li>
+							</ul>
+						</div>
+					</section>
+					<section class="chordSection">
+						<h4>Chorus</h4>
+						<div class="barContainer">
+							<ul>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+							</ul>
+							<ul>
+								<li>F<sub>&nbsp;</sub></li>
+								<li>F<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+							</ul>
+							<ul>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+							</ul>
+							<ul>
+								<li>A<sub>m</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+							</ul>
+							<ul>
+								<li>E<sub>&nbsp;</sub></li>
+								<li>E<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+							</ul>
+							<ul>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+							</ul>
+							<ul>
+								<li>E<sub>&nbsp;</sub></li>
+								<li>E<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+							</ul>
+							<ul>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>D<sub>&nbsp;</sub></li>
+								<li>A<sub>&nbsp;</sub></li>
+								<li>&nbsp;<sub>&nbsp;</sub></li>
+							</ul>
+						</div>
+					</section>
+				</section>
+				<section id="strum">
+					<h4>Strum Pattern</h4>
+					<ul>
+						<li>
+							<img src="img/strum_d.svg">
+							<sub>&nbsp;</sub>
+						</li>
+						<li>
+							<img src="img/strum_b.svg">
+							<sub>&nbsp;</sub>
+						</li>
+						<li>
+							<img src="img/strum_d.svg">
+							<sub><img src="img/strum_m.svg"></sub>
+						</li>
+						<li>
+							<img src="img/strum_b.svg">
+							<sub>&nbsp;</sub>
+						</li>
+						<li>
+							<img src="img/strum_d.svg">
+							<sub>&nbsp;</sub>
+						</li>
+						<li>
+							<img src="img/strum_u.svg">
+							<sub>&nbsp;</sub>
+						</li>
+						<li>
+							<img src="img/strum_b.svg">
+							<sub>&nbsp;</sub>
+						</li>
+						<li>
+							<img src="img/strum_u.svg">
+							<sub>&nbsp;</sub>
+						</li>
+						<li>
+							<img src="img/strum_b.svg">
+							<sub>&nbsp;</sub>
+						</li>
+						<li>
+							<img src="img/strum_u.svg">
+							<sub>&nbsp;</sub>
+						</li>
+						<li>
+							<img src="img/strum_d.svg">
+							<sub>&nbsp;</sub>
+						</li>
+						<li>
+							<img src="img/strum_u.svg">
+							<sub>&nbsp;</sub>
+						</li>
+						<li>
+							<img src="img/strum_d.svg">
+							<sub><img src="img/strum_a.svg"></sub>
+						</li>
+						<li>
+							<img src="img/strum_u.svg">
+							<sub>&nbsp;</sub>
+						</li>
+					</ul>
+				</section>
+			</article>
 		</main>
 	</body>
 </html>
