@@ -6,19 +6,22 @@
 		<link rel="stylesheet" href="css/style.css" media="" charset="utf-8">
 	</head>
 	<body>
-		<nav>
-			<!-- nav links -->
-			<h3>New Song: Step 1</h3>
-			<a href="#" title="cancel"><img src="img/close.png"></a>
-		</nav>
+		<header>
+			<hgroup>
+				<h1>New Song</h1>
+				<h2>Step 1</h2>
+			</hgroup>
+			<a href="#" id="back" title="back"><img src="img/back.svg"></a>
+			<span id="blank"></span>
+		</header>
 		<main id="newSong">
-			<p contenteditable>Song Title</p>
-			<p contenteditable>Artist</p>
-			<p><span contenteditable>Capo</span> Fret</p>
-			<p contenteditable>Chords</p>
-			<p><span contenteditable>#</span> BPM</p>
+			<input placeholder="Song Title"></input>
+			<input placeholder="Artist"></input>
+			<div><input placeholder="Capo"></input><span>&nbsp;Fret</span></div>
+			<input placeholder="Chords"></input>
+			<div><input placeholder="#"></input><span>&nbsp;BPM</span></div>
 
-			<a href="#" title="next"><img src="img/next.png"></a>
+			<a href="#" id="next"><img src="img/next.svg"></a>
 		</main>
 	</body>
 </html>

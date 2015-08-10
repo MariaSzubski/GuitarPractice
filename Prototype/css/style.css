@@ -1,12 +1,14 @@
-/* ---------------------------------------- Table of Contents
+/* ________________________________________ Table of Contents
 
 Global
 Home & Nav
 Chord Changes
+Songs
+	Song List
+	Song Details
+	New Song
 
-*/
-
-/* ---------------------------------------- Global */
+___________________________________________ Global */
 
 @import url(http://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Roboto+Condensed:400,700,300);
 
@@ -16,22 +18,33 @@ Chord Changes
 	padding: 0px;
 }
 
-a{
-	color: #222;
-	text-decoration: none;
-}
-
 body{
 	background-color:#eee;
 	font-family: 'Source Serif Pro', serif;
 }
 
+a{
+	color: #222;
+	text-decoration: none;
+}
+header{
+	display: flex;
+	align-items:flex-start;
+	margin-bottom: 1em;
+}
+
+
 hgroup	{text-align:center;}
 h1			{font-size: 1.75em; font-weight: 600;}
 h2, h3	{font-size: .875em; font-weight: 400;}
 
-/* ---------------------------------------- Home & Nav */
+header hgroup	{flex:1; order:2;}
+#back				{order:1; width:24px; margin: .5em 0em 0em .5em;}
+#add, #blank	{order:3; width:24px; margin: .5em .5em 0em 0;}
+#next				{margin-top:1em;}
 
+
+/* ________________________________________ Home &	Nav */
 .navLg{
 	box-sizing: border-box;
 	width: 95%;
@@ -56,23 +69,12 @@ h2, h3	{font-size: .875em; font-weight: 400;}
 }
 
 
-/* ---------------------------------------- Chord Changes */
+/* ________________________________________ Chord Changes */
 
 
-/* ---------------------------------------- Songs */
+/* ________________________________________ Songs */
 
-header{
-	display: flex;
-	align-items:flex-start;
-	margin-bottom: 1em;
-}
-
-header hgroup	{flex:1; order:2;}
-#back				{order:1; width:24px; margin: .5em 0em 0em .5em;}
-#add				{order:3; width:24px; margin: .5em .5em 0em 0;}
-
-
-/*	_________ Songs List*/
+/*	---------------- Songs List */
 
 #songList li{
    display: flex;
@@ -107,7 +109,7 @@ header hgroup	{flex:1; order:2;}
 	line-height: 1.75em;
 }
 
-/*	_________ Songs Details */
+/*	---------------- Songs Details */
 
 #songDetails h4 {
 	font-size: .875em; font-weight: 400;
@@ -172,11 +174,43 @@ header hgroup	{flex:1; order:2;}
 	margin-top: -.125em;
 }
 
-/*	_________ Songs Details */
+/*	---------------- New Song */
+#newSong{
+	display: flex;
+	flex-flow: column;
+}
 
-#newSong p{
-	font-family: serif;
+#newSong input{
+	flex: 1;
+	font-family: 'Source Serif Pro', serif;
 	font-size: 2.5em;
 	text-align: center;
 	line-height: 2em;
+	background: none;
+}
+
+#newSong input:focus{
+	color: orange;
+}
+
+/* keep labels */
+#newSong div{
+	display: flex;
+	justify-content: center;
+}
+
+#newSong div input{
+	width: 100px;
+	flex:none;
+}
+
+#newSong div span{
+	font-family: serif;
+	font-size: 2.5em;
+	line-height: 2em;
+}
+
+#newSong a{
+	display: flex;
+	justify-content: center;
 }
