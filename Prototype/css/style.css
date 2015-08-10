@@ -37,11 +37,13 @@ header{
 hgroup	{text-align:center;}
 h1			{font-size: 1.75em; font-weight: 600;}
 h2, h3	{font-size: .875em; font-weight: 400;}
+h4 		{font-size: .875em; font-weight: 400;text-align: center;}
 
-header hgroup	{flex:1; order:2;}
-#back				{order:1; width:24px; margin: .5em 0em 0em .5em;}
-#add, #blank	{order:3; width:24px; margin: .5em .5em 0em 0;}
-#next				{margin-top:1em;}
+header hgroup		{flex:1; order:2;}
+#back					{order:1; width:24px; margin: .5em 0em 0em .5em;}
+#addEdit, #blank	{order:3; width:24px; margin: .5em .5em 0em 0;}
+#next, #complete	{margin-top:1em; display: flex; justify-content: center;}
+
 
 
 /* ________________________________________ Home &	Nav */
@@ -111,10 +113,6 @@ header hgroup	{flex:1; order:2;}
 
 /*	---------------- Songs Details */
 
-#songDetails h4 {
-	font-size: .875em; font-weight: 400;
-	text-align: center;
-}
 
 .chordSection, #strum{
 	padding: .5em 1em;
@@ -180,20 +178,22 @@ header hgroup	{flex:1; order:2;}
 	flex-flow: column;
 }
 
+
+
 #newSong input{
 	flex: 1;
+	background: none;
 	font-family: 'Source Serif Pro', serif;
 	font-size: 2.5em;
 	text-align: center;
 	line-height: 2em;
-	background: none;
 }
 
 #newSong input:focus{
 	color: orange;
 }
 
-/* keep labels */
+/* keep labels for Capo &	BPM */
 #newSong div{
 	display: flex;
 	justify-content: center;
@@ -201,7 +201,7 @@ header hgroup	{flex:1; order:2;}
 
 #newSong div input{
 	width: 100px;
-	flex:none;
+	flex: none;
 }
 
 #newSong div span{
@@ -210,7 +210,14 @@ header hgroup	{flex:1; order:2;}
 	line-height: 2em;
 }
 
-#newSong a{
-	display: flex;
-	justify-content: center;
+#newSong ul{
+	width: 180px;
+}
+
+#newSong select{
+	font-family: 'Roboto Condensed', serif;
+	font-size: .625em;
+	height: 2em;
+	width:45px;
+	padding:0px;
 }
