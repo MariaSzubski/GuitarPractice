@@ -3,25 +3,32 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Guitar Practice</title>
-		<link rel="stylesheet" href="css/style.css" media="" charset="utf-8">
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		<header>
-			<hgroup>
+			<div>
 				<h1>New Song</h1>
 				<h2>Step 1</h2>
-			</hgroup>
-			<a href="#" id="back" title="back"><img src="img/back.svg"></a>
-			<span id="blank"></span>
+				<h3>Enter Song Details</h3>
+			</div>
+			<a href="songs.html" id="back" title="back"><img src="img/back.svg" alt="Cancel"></a>
+			<div id="blank">&nbsp;</div>
 		</header>
 		<main id="newSong">
-			<input placeholder="Song Title"></input>
-			<input placeholder="Artist"></input>
-			<div><input placeholder="Capo"></input><span>&nbsp;Fret</span></div>
-			<input placeholder="Chords"></input>
-			<div><input placeholder="#"></input><span>&nbsp;BPM</span></div>
+			<input placeholder="Song Title">
+			<input placeholder="Artist">
+			<div>
+				<input placeholder="Capo">
+				<div class="inputLabel">&nbsp;Fret</div>
+			</div>
+			<input placeholder="Chords">
+			<div>
+				<input placeholder="#">
+				<div class="inputLabel">&nbsp;BPM</div>
+			</div>
 
-			<a href="song_new_step2.html" id="next"><img src="img/next.svg"></a>
+			<a href="song_new_step2.html" id="next"><img src="img/next.svg" alt="Continue to Step 2"></a>
 		</main>
 	</body>
 </html>
