@@ -3,79 +3,117 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Guitar Practice</title>
-		<link rel="stylesheet" href="css/style.css" media="" charset="utf-8">
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<nav>
-			<!-- Tabs and Page Title -->
-		</nav>
-		<main>
+		<header>
+			<div>
+				<h1>1 Minute Chord Changes</h1>
+			</div>
+			<a href="index.html" id="back" title="back"><img src="img/back.svg" alt="Back to features list"></a>
+			<div id="blank">&nbsp;</div>
+		</header>
+		<main id="chords">
 			<section id="timer">
-				<section id="timeDial">
-				</section>
-				<section id="timeValue">
+				<img src="img/timeTrack.svg" alt="Placeholder">
+				<div id="timeValue">
 					1:00
-				</section>
+					<img src="img/play.svg" alt="Start timer">
+				</div>
 				<section id="play/pause">
 				</section>
 			</section>
 
 			<!-- Chord List -->
 			<article id="chordRecords">
-				<section class="chordChg">
+				<ul>
+				<li>
 					<h3>105</h3>
 					<h4>E : D</h4>
-				</section>
-				<section class="chordChg">
+				</li>
+				<li>
 					<h3>105</h3>
 					<h4>E : D</h4>
-				</section>
-				<section class="chordChg">
+				</li>
+				<li>
 					<h3>105</h3>
 					<h4>E : D</h4>
-				</section>
-				<section class="chordChg">
+				</li>
+				<li>
 					<h3>105</h3>
 					<h4>E : D</h4>
-				</section>
-				<section class="chordChg">
-					<h3>105</h3>
-					<h4>E : D</h4>
-				</section>
-				<section class="chordChg">
-					<h3>105</h3>
-					<h4>E : D</h4>
-				</section>
-				<section class="chordChg">
-					<img src="img/add.png">
+				</li>
+				<li>
+					<img src="img/add.svg" alt="Add New Combo">
 					<h4>New Combo</h4>
-				</section>
+				</li>
+			</ul>
+
 			</article>
 
 			<!-- Add Chord Overlay-->
-			<article id="chordNew">
-				<section class="newOverlay">
-					<section class="spinner">
-						E
-					</section>
+			<section class="overlay">
+				<div>
+					<select>
+						<option value="0">0</option>
+						<option value="A">A</option>
+						<option value="Am">Am</option>
+						<option value="D">D</option>
+						<option value="E">E</option>
+					</select>
 					to
-					<section class="spinner">
-						D
-					</section>
-					<button>Add</button>
-				</section>
-			</article>
+					<select>
+						<option value="">–</option>
+						<option value="A">A</option>
+						<option value="Am">Am</option>
+						<option value="D">D</option>
+						<option value="E">E</option>
+					</select>
+				</div>
+				<button>Add</button>
+			</section>
 
 			<!-- Chord Details -->
 			<article id="chordDetail">
-				<section class="chordChg spinner">
-					<h3>105</h3>
+				<section class="chordChg">
+					<div>
+						<select>
+							<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+						<select>
+							<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+						</select>
+						<select>
+							<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+						</select>
+					</div>
 					<h4>E : D</h4>
-					<a href="#" title="minimize"><img src="img/min.png">
+					<a href="#" title="minimize"><img src="img/min.png" alt="Return to Chord List"></a>
 					<button>Save</button>
 				</section>
 				<section class="scrollUp">
-					<img src="img/scrollUp.png">
+					<img src="img/scrollUp.png" alt="View Charts">
 					Charts
 				</section>
 			</article>

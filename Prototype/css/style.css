@@ -2,17 +2,16 @@
 
 Global
 Header &	Navigation
-
 Home
-Chord Changes
 Songs
 	Song List
 	Song Details
 	New Song
+Chord Changes
 @Media
 ___________________________________________ Global */
 
-@import url(http://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Roboto+Condensed:400,700,300);
+@import url(http://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Roboto+Condensed:300,400,700);
 
 
 html, body {
@@ -24,12 +23,14 @@ html, body {
 
 
 a{
-	color: #333;
+	color: #222;
 	text-decoration: none;
+	font-weight: normal;
 }
 
-/* reset margins */
-h1, h2, h3, h4, ul, li, p	{ margin:0px; padding: 0px;}
+/* reset margins & padding */
+h1, h2, h3, h4, ul, li, p
+{ margin: 0px; padding: 0px;}
 
 
 /* ___________________________________________ Header &	Navigation */
@@ -59,9 +60,10 @@ header #addEdit, .addEdit, #blank	{
 }
 
 
-h1			{ font-size: 1.75em; font-weight: 600; }
-h2, h3	{ font-size: .875em; font-weight: 400; }
-h4 		{ font-size: .875em; font-weight: 400; text-align: center; }
+h1				{ font-size: 1.75em; font-weight: 600; }
+#homeNav h1	{ font-size: 2.75em; font-weight: 400; }
+h2, h3		{ font-size: .875em; font-weight: 400; }
+h4 			{ font-size: .875em; font-weight: 400; text-align: center; }
 
 
 /* ___________________________________________ Home */
@@ -70,21 +72,23 @@ h4 		{ font-size: .875em; font-weight: 400; text-align: center; }
 	min-height: 100%;
 	display: flex;
 	flex-flow: column;
+		font-weight: 400;
 }
 
 #homeNav > a {
 	flex: 1;
 	margin: 1em;
 	padding: 1em;
-	background: #fff;
-	border: 1px solid #ddd;
 	text-align: center;
+	font-family: 'Roboto Condensed';
 
 	display: flex;
 	flex-flow: column;
 	justify-content: center;
 	align-items: center;
 }
+
+#homeNav h1{}
 
 #homeNav > a:last-of-type {
 	margin-top: 0em;
@@ -259,4 +263,117 @@ h4 		{ font-size: .875em; font-weight: 400; text-align: center; }
 	width: 400px;
 	height: 2.9em;
 	background-color: #ddd;
+}
+
+
+/* ___________________________________________ Chord Changes */
+
+#chords{
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+}
+/*	---------------- Timer */
+
+#timer{
+	z-index: 0;
+	position: relative;
+	display: flex;
+	width: 167px;
+	height: 167px;
+}
+
+
+#timer img{
+	z-index: 0;
+}
+
+#timeValue{
+	z-index: 1;
+	position: absolute;
+	top:0;
+	left:0;
+	width: 167px;
+	height: 167px;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 3.5em;
+	font-weight: 400;
+
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/*	---------------- Records */
+
+#chordRecords{
+	margin: 1em 1em;
+	width: auto;
+	display: flex;
+	flex-flow: row wrap;
+}
+#chordRecords ul{
+	width: 90%;
+	margin: auto;
+}
+#chordRecords li{
+	float:left;
+	border:1px solid #ddd;
+	background-color: white;
+	min-width: 100px;
+	min-height: 100px;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	margin: .2em;
+}
+
+#chordRecords h3{
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 1.75em;
+}
+
+.overlay{
+	z-index: 1000;
+	background-color: #fff;
+	border: 1px solid #aaa;
+	box-shadow: 0px 0px 10px rgba(0,0,0,.25);
+	margin: auto;
+	padding: 1em;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#chords select{
+	font-family: 'Roboto Condensed', serif;
+	font-size: 1.75em;
+	height: 2em;
+	padding:0px;
+	border: 1px solid #aaa;
+	margin:.2em;
+   background-color: #fff;
+}
+#chords button{
+  font-family: 'Roboto Condensed', serif;
+  font-size: 1.2em;
+  padding: .5em  1em;
+  border: 1px solid #aaa;
+  margin:.5em;
+  background-color: #fff;
+}
+
+
+#chordDetail select{
+	margin: 0em;
+}
+
+.chordChg, .scrollUp{
+	display: flex;
+	flex-flow: column;
+	align-items: center;
 }
