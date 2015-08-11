@@ -7,7 +7,7 @@ Songs
 	Song List
 	Song Details
 	New Song
-
+@Media
 ___________________________________________ Global */
 
 @import url(http://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600,700|Roboto+Condensed:400,700,300);
@@ -96,6 +96,10 @@ header hgroup		{flex:1; order:2;}
 
 #songList img{
 	width: 1em;
+}
+
+#songList img[src*=pixel]{
+	display: none;
 }
 
 .songId{
@@ -220,4 +224,52 @@ header hgroup		{flex:1; order:2;}
 	height: 2em;
 	width:45px;
 	padding:0px;
+}
+
+/* ________________________________________ @ Media */
+
+@media (min-width: 600px) {
+	#songList ul{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	#songList li{
+		display: flex;
+		flex-direction: column;
+		max-width: 10%;
+		min-width: 100px;
+		margin:.2em;
+		padding: .5em;
+		background:white;
+		text-align: center;
+   	border: 1px solid #aaa;
+   }
+   #songList img[src*=next]{
+   	display: none;
+   }
+	#songList img[src*=pixel]{
+		display: block;
+		width:100%;
+		margin-bottom: .5em;
+		margin-right: 0px;
+	}
+	.barContainer{
+		justify-content: center;
+		font-size: 2.125em;
+	}
+	.barContainer ul{
+		width: 100px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.barContainer{
+		justify-content: center;
+		font-size: 2.5em;
+	}
+	.barContainer ul{
+		width: 140px;
+	}
 }
