@@ -8,8 +8,7 @@
 </head>
 <body>
 	<div id="timerContainer">1:00</div>
-	<button id="start">Start</button>
-	<button id="pause">Pause</button>
+	<button id="toggleBtn">Start</button>
 
 	<script type="text/javascript">
 // ------------------------------------- Start Timer
@@ -41,13 +40,27 @@ function endTimer(){
 	clearInterval(countDown);
 }
 
-// ------------------------------------- Events
+// ------------------------------------- Variables
+var countDown;
+var toggle = true;
 var timer = document.getElementById('timerContainer');
-var startBtn = document.getElementById("start");
-var pauseBtn = document.getElementById('pause');
-startBtn.onclick = startTimer;
-pauseBtn.onclick = endTimer;
+var toggleBtn = document.getElementById('toggleBtn');
 
+// ------------------------------------- Play/Pause Event Toggle
+toggleBtn.onclick = function(){
+	switch(toggle){
+		case true:
+			startTimer();
+			toggleBtn.innerHTML = 'Reset';
+			toggle = false;
+			break;
+		case false:
+			endTimer();
+			toggleBtn.innerHTML = 'Start';
+			toggle = true;
+			break;
+	}
+}
 	</script>
 </body>
 </html>
