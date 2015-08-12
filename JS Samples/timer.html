@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+
+</head>
+<body>
+	<div id="timerContainer">1:00</div>
+	<button id="start">Start</button>
+	<button id="pause">Pause</button>
+
+	<script type="text/javascript">
+// ------------------------------------- Start Timer
+function startTimer() {
+	var sec = 59;
+	countDown = setInterval(
+		function() {
+			switch(true){
+				case (sec < 10 && sec > 0):
+					timer.innerHTML = 0 + ':0' + sec;
+					break;
+				case (sec === 0):
+					timer.innerHTML = 0 + ':0' + sec;
+					clearInterval(countDown);
+					break;
+				default:
+					timer.innerHTML = 0 + ':' + sec;
+					break;
+			}
+			sec--;
+		},
+		1000
+	);
+}
+
+// ------------------------------------- Reset Timer
+function endTimer(){
+	timer.innerHTML = "1:00";
+	clearInterval(countDown);
+}
+
+// ------------------------------------- Events
+var timer = document.getElementById('timerContainer');
+var startBtn = document.getElementById("start");
+var pauseBtn = document.getElementById('pause');
+startBtn.onclick = startTimer;
+pauseBtn.onclick = endTimer;
+
+	</script>
+</body>
+</html>
