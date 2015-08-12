@@ -7,60 +7,59 @@
 
 </head>
 <body>
-	<div id="timerContainer">1:00</div>
-	<button id="toggleBtn">Start</button>
+	<div id="timer">1:00</div>
+	<button id="startReset">Start</button>
 
 	<script type="text/javascript">
-// ------------------------------------- Start Timer
+// ------------------------------------- Start & Reset Functions
 function startTimer() {
-	var sec = 59;
-	countDown = setInterval(
-		function() {
-			switch(true){
-				case (sec < 10 && sec > 0):
-					timer.innerHTML = 0 + ':0' + sec;
-					break;
-				case (sec === 0):
-					timer.innerHTML = 0 + ':0' + sec;
-					clearInterval(countDown);
-					break;
-				default:
-					timer.innerHTML = 0 + ':' + sec;
-					break;
-			}
-			sec--;
-		},
-		1000
-	);
+	sec = 59;
+	countdown = setInterval(currentTime, 1000);
+	toggle = false;
+	startReset.innerHTML = 'Reset';
 }
 
-// ------------------------------------- Reset Timer
-function endTimer(){
+function resetTimer(){
+	clearInterval(countdown);
+	toggle = true;
+	startReset.innerHTML = 'Start';
 	timer.innerHTML = "1:00";
-	clearInterval(countDown);
+}
+
+// ------------------------------------- Countdown Output
+function currentTime() {
+	switch(true){
+		case (sec < 10 && sec > 0):
+			timer.innerHTML = 0 + ':0' + sec;
+			break;
+		case (sec === 0):
+			timer.innerHTML = 0 + ':0' + sec;
+			clearInterval(countdown);
+			break;
+		default:
+			timer.innerHTML = 0 + ':' + sec;
+			break;
+	}
+	sec--;
 }
 
 // ------------------------------------- Variables
-var countDown;
+var countdown, sec;
 var toggle = true;
-var timer = document.getElementById('timerContainer');
-var toggleBtn = document.getElementById('toggleBtn');
+var timer = document.getElementById('timer');
+var startReset = document.getElementById('startReset');
 
-// ------------------------------------- Play/Pause Event Toggle
-toggleBtn.onclick = function(){
+// ------------------------------------- Start/Reset Events
+startReset.onclick = function(){
 	switch(toggle){
 		case true:
 			startTimer();
-			toggleBtn.innerHTML = 'Reset';
-			toggle = false;
 			break;
 		case false:
-			endTimer();
-			toggleBtn.innerHTML = 'Start';
-			toggle = true;
+			resetTimer();
 			break;
 	}
-}
+};
 	</script>
 </body>
 </html>
