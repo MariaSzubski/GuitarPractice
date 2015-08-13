@@ -16,12 +16,12 @@
 		<main id="chords">
 			<section id="timer">
 				<img src="img/timeTrack.svg" alt="Placeholder">
-				<div id="timeValue">
-					1:00
-					<img src="img/play.svg" alt="Start timer">
+				<div id="startReset">
+					<div id="timeValue">
+						1:00
+					</div>
+					<img src="img/play.svg" alt="Start timer" id="toggleBtn">
 				</div>
-				<section id="play/pause">
-				</section>
 			</section>
 
 			<!-- Chord List -->
@@ -43,7 +43,7 @@
 					<h3>105</h3>
 					<h4>E : D</h4>
 				</li>
-				<li>
+				<li id="newChordCombo">
 					<img src="img/add.svg" alt="Add New Combo">
 					<h4>New Combo</h4>
 				</li>
@@ -52,27 +52,28 @@
 			</article>
 
 			<!-- Add Chord Overlay-->
-			<section class="overlay">
-				<div>
-					<select>
-						<option value="0">0</option>
-						<option value="A">A</option>
-						<option value="Am">Am</option>
-						<option value="D">D</option>
-						<option value="E">E</option>
-					</select>
-					to
-					<select>
-						<option value="">–</option>
-						<option value="A">A</option>
-						<option value="Am">Am</option>
-						<option value="D">D</option>
-						<option value="E">E</option>
-					</select>
-				</div>
-				<button>Add</button>
-			</section>
-
+			<div id="addChordOverlay" class="overlayContainer">
+				<section class="overlay">
+					<div>
+						<select>
+							<option value="0">0</option>
+							<option value="A">A</option>
+							<option value="Am">Am</option>
+							<option value="D">D</option>
+							<option value="E">E</option>
+						</select>
+						to
+						<select>
+							<option value="">–</option>
+							<option value="A">A</option>
+							<option value="Am">Am</option>
+							<option value="D">D</option>
+							<option value="E">E</option>
+						</select>
+					</div>
+					<button id="submitChordCombo">Add</button>
+				</section>
+			</div>
 			<!-- Chord Details -->
 			<article id="chordDetail">
 				<section class="chordChg">
@@ -126,5 +127,6 @@
 
 
 		</main>
+		<script src="js/scripts.js"></script>
 	</body>
 </html>
