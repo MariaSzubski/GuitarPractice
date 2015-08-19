@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Arc Sample</title>
+
+	</head>
+	<body>
+		<canvas id="ringTimer" width="174" height="174"></canvas>
+		<script type="text/javascript">
+			var ringTimer = document.getElementById('ringTimer').getContext('2d');
+			var rSec = 0;
+			var length_i, endPoint, arcVal;
+
+			function drawRingTimer(){
+				// ------------------------------------- Reset Canvas
+				ringTimer.clearRect(0,0,174,174);
+
+				// ------------------------------------- Draw outer track ring
+				ringTimer.beginPath();
+				ringTimer.arc (
+					87,				// x position
+					87,				// y position
+					87,				// radius
+					0,					// start
+					(2 * Math.PI),	// end
+					true				// counter-clockwise
+				);
+				ringTimer.strokeStyle = '#999';
+				ringTimer.fillStyle = '#ddd';
+				ringTimer.lineWidth = 1;
+				ringTimer.stroke();
+				ringTimer.fill();
+
+				// ------------------------------------- Draw inner track ring
+				ringTimer.beginPath();
+				ringTimer.arc (
+					87,				// x position
+					87,				// y position
+					77,				// radius
+					0,					// start
+					(2 * Math.PI),	// end
+					true				// counter-clockwise
+				);
+				ringTimer.fillStyle = '#fff';
+				ringTimer.stroke();
+				ringTimer.fill();
+
+				// ------------------------------------- Increment ring length
+				/* length change per frame = [ (radian multiplier) / (60 seconds * frames per second) ] * (elapsed seconds) */
+				length_i = ( 2 / (60*25) ) * rSec;
+
+				/* count from top of circle) */
+				arcVal = 1.5 + length_i;
+
+				/* calculate radians */
+				endPoint = arcVal * Math.PI;
+
+
+				// ------------------------------------- Draw timer ring
+				ringTimer.beginPath();
+				ringTimer.arc (
+					87,					// x position
+					87,					// y position
+					82,					// radius
+					(1.5 * Math.PI),	// start
+					endPoint,			// end
+					true					// counter-clockwise
+				);
+				ringTimer.lineWidth = 10;
+				ringTimer.strokeStyle = 'teal';
+				ringTimer.stroke();
+				ringTimer.restore();
+				rSec++;
+			}
+
+			arcAnim = setInterval(drawRingTimer, 40);
+
+
+		</script>
+	</body>
+</html>
