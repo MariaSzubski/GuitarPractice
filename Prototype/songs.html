@@ -8,75 +8,27 @@
 	<body>
 		<header>
 			<div>
-				<h1>Songs</h1>
-				<h2>Artist</h2>
-				<h3><span id="capo">3rd Fret</span> • <span id="bpm">120 BPM</span></h3>
+				<h1 id="t_title">Songs</h1>
+				<h2 id="t_artist">Artist</h2>
+				<h3><span id="t_capo">3rd Fret</span> • <span id="t_bpm">120 BPM</span></h3>
 			</div>
 			<a href="index.html" id="back" title="back"><img src="img/back.svg" alt="Back to features list"></a>
 			<a href="song_new_step1.html" id="addEdit"><img src="img/add.svg" alt="Add a new song"></a>
 		</header>
 		<main>
 <!--																		Song List -->
-			<section id="songList">
-				<ul>
-					<li>
-						<div>
-							<p>Song Title</p>
-							<p>Song Artist</p>
-						</div>
-						<img src="img/next.svg" alt="View Song">
-					</li>
-					<li>
-						<div>
-							<p>Song Title</p>
-							<p>Song Artist</p>
-						</div>
-						<img src="img/next.svg" alt="View Song">
-					</li>
-					<li>
-						<div>
-							<p>Song Title</p>
-							<p>Song Artist</p>
-						</div>
-						<img src="img/next.svg" alt="View Song">
-					</li>
-					<li>
-						<div>
-							<p>Song Title</p>
-							<p>Song Artist</p>
-						</div>
-						<img src="img/next.svg" alt="View Song">
-					</li>
-					<li>
-						<div>
-							<p>Song Title</p>
-							<p>Song Artist</p>
-						</div>
-						<img src="img/next.svg" alt="View Song">
-					</li>
-					<li>
-						<div>
-							<p>Song Title</p>
-							<p>Song Artist</p>
-						</div>
-						<img src="img/next.svg" alt="View Song">
-					</li>
-					<li>
-						<div>
-							<p>Song Title</p>
-							<p>Song Artist</p>
-						</div>
-						<img src="img/next.svg" alt="View Song">
-					</li>
+			<section id="song">
+				<ul id="songList">
+
 				</ul>
 			</section>
 
 <!--																		Song Details -->
 			<article id="songDetails">
 				<section id="chords">
-					<section class="chordSection">
+					<section class="chordSection" id = "s_1_container">
 						<h4>Verse</h4>
-						<div class="barContainer">
+						<div class="barContainer" id = "s_1">
 							<ul>
 								<li>A<sub>&nbsp;</sub></li>
 								<li>A<sub>&nbsp;</sub></li>
@@ -115,9 +67,9 @@
 							</ul>
 						</div>
 					</section>
-					<section class="chordSection">
+					<section class="chordSection" id = "s_2_container">
 						<h4>Chorus</h4>
-						<div class="barContainer">
+						<div class="barContainer" id = "s_2">
 							<ul>
 								<li>A<sub>&nbsp;</sub></li>
 								<li>A<sub>&nbsp;</sub></li>
@@ -169,9 +121,9 @@
 						</div>
 					</section>
 				</section>
-				<section id="strum">
+				<section id="s_strum_container">
 					<h4>Strum Pattern</h4>
-					<ul>
+					<ul id="s_strum">
 						<li>
 							<img src="img/strum_d.svg" alt="Down">
 							<sub>&nbsp;</sub>
@@ -232,5 +184,6 @@
 				</section>
 			</article>
 		</main>
+		<script src="js/song_json.js" charset="utf-8"></script>
 	</body>
 </html>
