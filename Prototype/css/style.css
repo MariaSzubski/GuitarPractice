@@ -277,7 +277,7 @@ h4 			{ font-size: .875em; font-weight: 400; text-align: center; }
 }
 /*	---------------- Timer */
 
-#timer{
+#timer_container{
 	z-index: 0;
 	position: relative;
 	display: flex;
@@ -287,7 +287,7 @@ h4 			{ font-size: .875em; font-weight: 400; text-align: center; }
 
 }
 
-#timer canvas{
+#timer_container canvas{
 	z-index: 0;
 	position: absolute;
 	top:0;
@@ -323,7 +323,7 @@ h4 			{ font-size: .875em; font-weight: 400; text-align: center; }
 
 }
 
-#timeValue{
+#n_timer{
 	margin-top: 5px;
 }
 
