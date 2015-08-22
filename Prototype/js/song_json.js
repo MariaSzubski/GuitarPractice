@@ -33,7 +33,7 @@ var song_ = [
 		"",
 		"",
 		"",
-		["d", " ", "d", " ", "d" ,"u", "d", " "],
+		["d", "b", "d", "b", "d", "u", "d", "b"],
 		[" ", " ", "a", " ", " ", " ", " ", " "]
 	),
 	new Song(
@@ -45,7 +45,7 @@ var song_ = [
 		"",
 		"",
 		"",
-		["d", " ", "d", "u"],
+		["d", "b", "d", "u"],
 		["a", " ", " ", " "]
 	),
 	new Song(
@@ -57,7 +57,7 @@ var song_ = [
 		"",
 		["ADED", "ADED", "ADED", "ADED", "GAGA"],
 		["    ", "    ", "    ", "    ", "6 6 "],
-		["d", " ", "d", " ", "d", "d", "d", "u"],
+		["d", "b", "d", "b", "d", "d", "d", "u"],
 		["a", " ", "a", " ", "u", "u", " ", " "]
 	),
 	new Song(
@@ -81,7 +81,7 @@ var song_ = [
 		"",
 		"",
 		"",
-		["d", " ", "d", " ", "d", "u", " ", "u", " ", "u", "d", "u", "d", "u", "d", "u"],
+		["d", "b", "d", "b", "d", "u", "b", "u", "b", "u", "d", "u", "d", "u", "d", "u"],
 		""
 	),
 	new Song(
@@ -93,7 +93,7 @@ var song_ = [
 		[" 7 7", "    ", "    ", "    ", "    "],
 		["AADA", "EEAA", "AADA", "AADD", "EEAA"],
 		["    ", "   7", "    ", "    ", "    "],
-		["d", " ", "d", " ", "d", "u", "d", "u"],
+		["d", "b", "d", "b", "d", "u", "d", "u"],
 		[" ", " ", "a", " ", " ", " ", " ", " "]
 	),
 	new Song(
@@ -105,7 +105,7 @@ var song_ = [
 		"",
 		["AADA", "DAAE", "AADA", "DAEA"],
 		"",
-		["d", " ", "d", "u", "d", "u", "d", "u"],
+		["d", "b", "d", "u", "d", "u", "d", "u"],
 		[" ", " ", "a", " ", " ", " ", "a", " "]
 	),
 	new Song(
@@ -117,7 +117,7 @@ var song_ = [
 		"",
 		"",
 		"",
-		["d", " ", "d", "u", " ", "u", "d", " "],
+		["d", "b", "d", "u", "b", "u", "d", "b"],
 		[" ", " ", "a", " ", " ", " ", " ", " "]
 	),
 	new Song(
@@ -129,7 +129,7 @@ var song_ = [
 		["mm <", "mmmm", "mm <", "mmmm"],
 		["GGDD", "EEAA", "GGDD", "EEAA", "GGDD", "EEAA", "DDAA"],
 		["    ", "mm  ", "    ", "mm  ", "    ", "mm  ", "    "],
-		["d", "u", "d", "u", "d", "u", "d", " "],
+		["d", "u", "d", "u", "d", "u", "d", "b"],
 		["a", " ", " ", " ", " ", " ", " ", " "]
 	),
 
@@ -137,10 +137,11 @@ var song_ = [
 
 ];
 
-var songList = document.getElementById('songList');
+/* ------------------------------ Write Song List */
+var songList_ul = document.getElementById('songList_ul');
 
 for (var s = 0; s < song_.length; s++){
-	songList.innerHTML +=
+	songList_ul.innerHTML +=
 		'<li id="song_' + s + '">' +
 			'<div>' +
 				'<p>' + song_[s].title + '</p>' +
@@ -150,52 +151,157 @@ for (var s = 0; s < song_.length; s++){
 		'</li>';
 }
 
-var chords = document.getElementById('chords');
-var songDetails = document.getElementById('songDetails');
-
-var t_title		= document.getElementById('t_title');
-var t_artist 	= document.getElementById('t_artist');
-var t_capo 		= document.getElementById('t_capo');
-var t_bpm 		= document.getElementById('t_bpm');
-var click_id, result, getSong;
+/* ------------------------------ Song Details: Variables */
+var 	t_title		= document.getElementById('t_title').firstChild;
+var 	t_artist 	= document.getElementById('t_artist').firstChild;
+var 	t_capo 		= document.getElementById('t_capo').firstChild;
+var 	t_bpm 		= document.getElementById('t_bpm').firstChild;
+var 	clicked_id,	getIndex, getSong;
 
 
-songList.addEventListener('click', function(e){
-	// Convert ID to index value
-	click_id = e.target.id;
-	result = click_id.split("_");
-	getSong = song_[result[1]];
-
-	// Use index value to target song_ array
-	t_title.innerHTML		= getSong.title;
-	t_artist.innerHTML	= getSong.artist;
-	t_capo.innerHTML		= (
-		function(){
-			var suffix;
-			if ( getSong.capo >= 11 && getSong.capo <= 13 ){
+/* ------------------------------ Correct Number Suffixes */
+function numSuffix(val){
+	var suffix;
+	if ( val >= 11 && val <= 13 ){
+		suffix = 'th';
+	} else {
+		switch (( val % 10 ) + ''){
+			case '1':
+				suffix = 'st';
+				break;
+			case '2':
+				suffix = 'nd';
+				break;
+			case '3':
+				suffix = 'rd';
+				break;
+			case 'NaN':
+				suffix = '';
+				break;
+			default:
 				suffix = 'th';
-			} else {
-				switch ((getSong.capo % 10) + ''){
-					case '1':
-						suffix = 'st';
-						break;
-					case '2':
-						suffix = 'nd';
-						break;
-					case '3':
-						suffix = 'rd';
-						break;
-					case 'NaN':
-						suffix = '';
-						break;
-					default:
-						suffix = 'th';
-						break;
-				}
-			}
-			return getSong.capo + suffix + " Fret";
-		})();
+				break;
+		}
+	}
+	return val + suffix;
+}
 
-		getSong.capo + " Fret";
-	t_bpm.innerHTML		= getSong.bpm + " BPM";
-}, true);
+/* ------------------------------ Change Song on click */
+var songList_li = songList_ul.getElementsByTagName('li');
+for (var i = 0 ; i < songList_li.length ; ++i) {
+	songList_li[i].onclick = changeSong;
+}
+
+
+/* ------------------------------ Change Song Details */
+function changeSong(){
+
+	// Convert li#id to index, retreive value from song_[];
+	clicked_id 	= this.id;
+	getIndex 	= clicked_id.split("_");
+	getSong 		= song_[getIndex[1]];
+
+	// Update page header based on getSong
+	t_title.nodeValue		= getSong.title;
+	t_artist.nodeValue	= getSong.artist;
+	t_capo.nodeValue		= function(){ return numSuffix(getSong.capo) + " Fret"; }();
+	t_bpm.nodeValue		= getSong.bpm + " BPM";
+
+	// Write s_1 to page
+	var 	cs_1		= document.getElementById('cs_1').getElementsByTagName('div')[0];
+	var 	cs_2		= document.getElementById('cs_2').getElementsByTagName('div')[0];
+	var 	s_strum	= document.getElementById('s_strum');
+	var	c_1, c_2, c_3, c_4;
+	var	c_1_sub, c_2_sub, c_3_sub, c_4_sub;
+
+	cs_1.innerHTML ='';
+	cs_2.innerHTML ='';
+	s_strum.innerHTML = '';
+
+
+
+	for (var b = 0; b < getSong.s_1.length; b++){
+		defineBar(b);
+		cs_1.innerHTML +=
+			'<ul>' +
+				'<li>' + c_1 + '<sub>' + c_1_sub + '</sub>' + '</li>' +
+				'<li>' + c_2 + '<sub>' + c_2_sub + '</sub>' + '</li>' +
+				'<li>' + c_3 + '<sub>' + c_3_sub + '</sub>' + '</li>' +
+				'<li>' + c_4 + '<sub>' + c_4_sub + '</sub>' + '</li>' +
+			'</ul>';
+
+	}
+
+	for (var b = 0; b < getSong.s_2.length; b++){
+		defineBar2(b);
+		cs_2.innerHTML +=
+			'<ul>' +
+				'<li>' + c_1 + '<sub>' + c_1_sub + '</sub>' + '</li>' +
+				'<li>' + c_2 + '<sub>' + c_2_sub + '</sub>' + '</li>' +
+				'<li>' + c_3 + '<sub>' + c_3_sub + '</sub>' + '</li>' +
+				'<li>' + c_4 + '<sub>' + c_4_sub + '</sub>' + '</li>' +
+			'</ul>';
+
+	}
+
+	for (var b = 0; b < getSong.s_strum.length; b++){
+		defineStrum(b);
+		s_strum.innerHTML +=
+			'<li>' +
+				'<img src="img/strum_' + c_1 + '.svg" alt="Down">' +
+				'<sub>' + c_1_sub + '</sub>' +
+			'</li>';
+
+	}
+
+	function defineStrum(b){
+		for (var l = 0; l < getSong.s_strum[b].length; l++){
+			c_1 = getSong.s_strum[b].charAt(l);
+			c_1_sub = getSong.s_strum_sub[b].charAt(l);
+		}
+	}
+
+
+
+	function defineBar(b){
+		c_1 = getSong.s_1[b].charAt(0);
+		c_2 = getSong.s_1[b].charAt(1);
+		c_3 = getSong.s_1[b].charAt(2);
+		c_4 = getSong.s_1[b].charAt(3);
+		switch(true){
+			case typeof(getSong.s_1_sub) === 'string':
+				c_1_sub = '&nbsp;';
+				c_2_sub = '&nbsp;';
+				c_3_sub = '&nbsp;';
+				c_4_sub = '&nbsp;';
+				break;
+			case typeof(getSong.s_1_sub) === 'object':
+				c_1_sub = getSong.s_1_sub[b].charAt(0);
+				c_2_sub = getSong.s_1_sub[b].charAt(1);
+				c_3_sub = getSong.s_1_sub[b].charAt(2);
+				c_4_sub = getSong.s_1_sub[b].charAt(3);
+				break;
+		}
+	}
+	function defineBar2(b){
+		c_1 = getSong.s_2[b].charAt(0);
+		c_2 = getSong.s_2[b].charAt(1);
+		c_3 = getSong.s_2[b].charAt(2);
+		c_4 = getSong.s_2[b].charAt(3);
+		switch(true){
+			case typeof(getSong.s_2_sub) === 'string':
+				c_1_sub = '&nbsp;';
+				c_2_sub = '&nbsp;';
+				c_3_sub = '&nbsp;';
+				c_4_sub = '&nbsp;';
+				break;
+			case typeof(getSong.s_2_sub) === 'object':
+				c_1_sub = getSong.s_2_sub[b].charAt(0);
+				c_2_sub = getSong.s_2_sub[b].charAt(1);
+				c_3_sub = getSong.s_2_sub[b].charAt(2);
+				c_4_sub = getSong.s_2_sub[b].charAt(3);
+				break;
+		}
+	}
+
+};
