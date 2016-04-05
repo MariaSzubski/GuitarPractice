@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
+
+//                          COLORS
+
+@black: #263238;
+@white: #FFF;
+@teal: #0097A7;
+@red: #EF5350;
+@orange: #FF8A65;
+
+
+
+//                          FONTS
+
+.f-lobster{
+    font-family: 'Lobster', cursive;
+}
+
+.f-roboto{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.f-mono{
+    font-family: 'Source Code Pro', monospace;
+}
+
+.f-title{
+    .f-lobster;
+    font-size: 36/16em;
+    text-align: center;
+}
+
+.f-sml{
+    .f-roboto;
+    font-size: 1em;
+}
+
+.f-section{
+    .f-roboto;
+    font-weight: 700;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.f-liHeader(@color){
+    .f-roboto;
+    font-size: 24/16em;
+    color:@color;
+}
+
+.f-liDetail(@color){
+    .f-roboto;
+    font-size: 1em;
+}
+
+.f-chords(@color){
+    .f-mono;
+    font-size: 36/16em;
+}
+
+.f-counter(lg){
+    font-size: 80/16em;
+}
+
+.f-counter(sm){
+    font-size: 60/16em;
+}
+
+.f-counter(@_, @color){
+    .f-roboto;
+    color: @color;
+}
+
+
+//                          BUTTONS
+.a-button(@color){
+    border: 3px solid @color;
+    border-radius: 50%;
+    height: 48/16em;
+
+    .f-roboto;
+    font-size: 20/16em;
+    color:@color;
+    text-align: center;
+    vertical-align: middle;
+}
