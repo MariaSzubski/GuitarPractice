@@ -5,19 +5,19 @@
         <title>Guitar Practice</title>
         <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title">
     </head>
-    <body>
+    <body class="bg_black">
 
         <header>
-            <h2>Finger Exercises</h2>
-            <h3>Which chord change are you practicing</h3>
+            <h1>Finger Exercises</h1>
+            <h2>Which chord change are you practicing</h2>
             <a href="landing.html">
                 <img src="img/back.svg" alt="Back">
             </a>
         </header>
 
-        <section id="songList">
+        <section id="chordList">
             <nav>
-                <p>Sort By <span id="sortType">Record</span>, <span id="sortOrder">Highest to Lowest</span></p>
+                <h4>Sort By <span id="sortType">Record</span>, <span id="sortOrder">Highest to Lowest</span></4>
                 <div id="sortOverlay">
                     <label>Sort By</label>
                     <label><input type="radio" value="Record" checked name="sortBy">Record</label>
@@ -44,10 +44,13 @@
                     <img src="img/arrow.svg" alt="Next">
                 </li>
             </ul>
-            <a href="new_chord.html">
+        </section>
+
+        <aside>
+            <a href="exercises_new.html">
                 <img src="img/new.svg" alt="New Chord Combo">
             </a>
-        </section>
+        </aside>
 
         <footer>
             &copy; Maria Szubski 2016
