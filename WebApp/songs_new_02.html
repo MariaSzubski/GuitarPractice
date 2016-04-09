@@ -8,23 +8,35 @@
     <body class="bg_orange">
 
         <header>
-            <h1>Finger Exercises</h1>
-            <h2>Which chord change are you practicing?</h2>
-            <a href="exercises.html">
+            <h1>New Song</h1>
+            <h2>Step 2: Chords</h2>
+            <a href="songs.html">
                 <img src="img/back.svg" alt="Back">
             </a>
         </header>
 
-        <section class="form">
-            <label>First Chord</label>
-            <input type="text" placeholder="First Chord">
-            <label>Second Chord</label>
-            <input type="text" placeholder="Second Chord">
+        <section id="s_chords">
+            <section>
+                <h4>Verse</h4>
+                <ul>
+                    <li>AADD</li>
+                    <li>ADAA</li>
+                    <li>DDDD</li>
+                    <li>ADAA</li>
+                    <li>EEDD</li>
+                    <li class="active">ADAE</li>
+                </ul>
+            </section>
+        </section>
+
+        <section id="s_new">
+            <button>New Bar</button>
+            <button class="secondary"><i class="plus"></i> New Section</button>
         </section>
 
         <section class="keyboard" id="keyboard_chords">
             <div class="alpha">
-                <button>A</button>
+                <button class="active">A</button>
                 <button>B</button>
                 <button>C</button>
                 <button>D</button>
@@ -39,27 +51,27 @@
                 <button>4</button>
                 <button>5</button>
                 <button>6</button>
-                <button>7</button>
+                <button class="active">7</button>
             </div>
             <div class="accent">
-                <button>Sharp</button>
+                <button class="active">Sharp</button>
                 <button>Flat</button>
             </div>
             <div class="accent">
                 <button>Minor</button>
-                <button>Diminished</button>
+                <button class="active">Diminished</button>
             </div>
-            <button>Save</button>
+            <button>Next Bar</button>
+            <button>Add Chord</button>
         </section>
+
+        <a href="songs_new_03.html">
+            <img src="img/next.svg" alt="Save &amp; Continue">
+        </a>
 
         <footer>
             &copy; Maria Szubski 2016
         </footer>
-
-        <section  class="bg_orange" id="saved">
-            <h1>Chord Change <span class="state">Added</span></h1>
-            <img src="img/saved.svg" alt="Complete">
-        </section>
 
     </body>
 </html>

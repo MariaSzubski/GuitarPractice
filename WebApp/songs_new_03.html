@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Guitar Practice</title>
+        <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title">
+    </head>
+    <body class="bg_orange">
+
+        <header>
+            <h1>New Song</h1>
+            <h2>Step 3: Strum Pattern</h2>
+            <a href="songs.html">
+                <img src="img/back.svg" alt="Back">
+            </a>
+        </header>
+
+        <section id="s_strum">
+            <ul>
+                <li><i class="strum_down"></i><i class="strum_mute"></i></li>
+                <li><i class="strum_up"></i></li>
+                <li><i class="strum_down"></i></li>
+                <li><i class="strum_up"></i></li>
+                <li><i class="strum_down"></i><i class="strum_accent"></i></li>
+                <li><i class="strum_blank"></i></li>
+                <li><i class="strum_down"></i></li>
+                <li class="active"><i class="strum_up"></i></li>
+            </ul>
+        </section>
+
+        <section id="s_new">
+            <button>New Bar</button>
+            <button class="secondary"><i class="plus"></i> New Section</button>
+        </section>
+
+        <section class="keyboard" id="keyboard_strum">
+            <div class="alpha">
+                <h4>Direction</h4>
+                <button><i class="strum_down"></i></button>
+                <button><i class="strum_up"></i></button>
+                <button><i class="strum_blank"></i></button>
+            </div>
+            <div class="alpha">
+                <h4>Accent</h4>
+                <button><i class="strum_mute"></i></button>
+                <button><i class="strum_accent"></i></button>
+            </div>
+            <button>Add Symbol</button>
+        </section>
+
+        <a href="songs_detail.html">
+            <img src="img/next.svg" alt="Save &amp; Continue">
+        </a>
+
+        <footer>
+            &copy; Maria Szubski 2016
+        </footer>
+
+    </body>
+</html>
