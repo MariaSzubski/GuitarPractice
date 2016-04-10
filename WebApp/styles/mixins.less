@@ -16,54 +16,91 @@ H6: Description
 //                          COLORS
 
 @black: #263238;
-@white: #FFF;
+@white: #F5F5F5;
 @teal: #0097A7;
 @red: #EF5350;
 @orange: #FF8A65;
 
+//                          GRADIENT BACKGROUNDS
 
+.gradient(gray){
+    background: linear-gradient(55deg, #000, #37474F);
+}
 
+.gradient(blue){
+    background: linear-gradient(55deg, #006064, #4DB6AC);
+}
+
+.gradient(orange){
+    background: linear-gradient(55deg, #EF5350, #FFCC80);
+}
+
+.gradient(guitar){
+    background-image: url('../img/bg_amp.jpg');
+    background-size: cover;
+    background-position: top center;
+}
+
+.shadow{
+    box-shadow: 0rem 0rem 8/16rem #000;
+}
 //                          FONTS
 
 .f-lobster{
     font-family: 'Lobster', cursive;
+    -webkit-font-smoothing: antialiased;
 }
 
 .f-roboto{
     font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
 }
 
 .f-mono{
     font-family: 'Source Code Pro', monospace;
 }
 
-.f-title{
+.f-title(@color:@white){
     .f-lobster;
     font-size: 36/16em;
     text-align: center;
+    color:@color;
 }
 
-.f-sml{
+.f-sml(@color:@white){
     .f-roboto;
     font-size: 1em;
+    color:@color;
+    text-align: center;
 }
 
-.f-section{
+.f-section(@color:@red){
     .f-roboto;
     font-weight: 700;
     font-size: 1em;
     text-transform: uppercase;
+    text-align: center;
+    color:@color;
 }
 
-.f-liHeader(@color){
+.f-button(@color:@teal){
+    .f-roboto;
+    font-size: 20/16em;
+    color:@color;
+    text-align: center;
+}
+
+.f-label(@color:@teal){
     .f-roboto;
     font-size: 24/16em;
     color:@color;
 }
 
-.f-liDetail(@color){
+.f-detail(@color:@black){
     .f-roboto;
     font-size: 1em;
+    color:@color;
+    line-height: 24/16em;
 }
 
 .f-chords(@color){
