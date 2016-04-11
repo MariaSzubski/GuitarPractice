@@ -57,7 +57,7 @@ H6: Description
 }
 
 .f-mono{
-    font-family: 'Source Code Pro', monospace;
+    font-family: monospace;
 }
 
 .f-title(@color:@white){
@@ -103,9 +103,10 @@ H6: Description
     line-height: 24/16em;
 }
 
-.f-chords(@color){
+.f-chords(@color:@black){
     .f-mono;
     font-size: 36/16em;
+    color:@color;
 }
 
 //                             FIX THIS

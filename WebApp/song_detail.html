@@ -5,16 +5,16 @@
         <title>Guitar Practice</title>
         <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title">
     </head>
-    <body class="bg_white">
+    <body class="song_detail bg_white">
 
         <header>
             <h1 id="s_title">Three Little Birds</h1>
             <h2 id="s_artist">Bob Marley</h2>
             <h3><span id="s_capo">3rd Fret</span> • <span id="s_tempo">120 BPM</span></h3>
-            <a href="songs.html">
-                <img src="img/arrow.svg" alt="Back">
+            <a href="songs.html" id="primary">
+                <img src="img/back_w.svg" alt="Back">
             </a>
-            <a href="song_edit.html">
+            <a href="song_edit.html" id="secondary">
                 <img src="img/edit.svg" alt="Edit Song">
             </a>
         </header>
@@ -22,7 +22,7 @@
         <section id="s_chords">
             <section>
                 <h4>Verse</h4>
-                <ul>
+                <ul class="content">
                     <li>AADD</li>
                     <li>ADAA</li>
                     <li>DDDD</li>
@@ -33,7 +33,7 @@
             </section>
             <section>
                 <h4>Chorus</h4>
-                <ul>
+                <ul class="content">
                     <li>AAAA</li>
                     <li>FFAA</li>
                     <li>DDDD</li>

@@ -1,17 +1,5 @@
-/*
-
-H1: Page Title
-H2: Page Sub-Title 1
-H3: Page Sub-Title 2
-H4: Section Header
-H5: Label
-H6: Description
-
-*/
 @import url("https://fonts.googleapis.com/css?family=Lobster");
-
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700");
-
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 /*
 
@@ -24,7 +12,7 @@ H6: Description
 
 */
 .shadow {
-  box-shadow: 0rem 0rem 0.5rem #000000;
+  box-shadow: 0rem 0rem 0.5rem #000;
 }
 .f-lobster {
   font-family: 'Lobster', cursive;
@@ -35,7 +23,7 @@ H6: Description
   font-weight: 400;
 }
 .f-mono {
-  font-family: 'Source Code Pro', monospace;
+  font-family: monospace;
 }
 * {
   box-sizing: border-box;
@@ -44,13 +32,13 @@ H6: Description
   padding: 0;
 }
 body.bg_primary {
-  background: linear-gradient(55deg, #000000, #37474f);
+  background: linear-gradient(55deg, #000, #37474F);
 }
 body.bg_exercise {
-  background: linear-gradient(55deg, #ef5350, #ffcc80);
+  background: linear-gradient(55deg, #EF5350, #FFCC80);
 }
 body.bg_song {
-  background: linear-gradient(55deg, #006064, #4db6ac);
+  background: linear-gradient(55deg, #006064, #4DB6AC);
 }
 body.bg_photo {
   background-image: url('../img/bg_amp.jpg');
@@ -72,14 +60,14 @@ h1 {
   -webkit-font-smoothing: antialiased;
   font-size: 2.25em;
   text-align: center;
-  color: #f5f5f5;
+  color: #F5F5F5;
 }
 h2,
 h3 {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 1em;
-  color: #f5f5f5;
+  color: #F5F5F5;
   text-align: center;
 }
 h4 {
@@ -89,13 +77,13 @@ h4 {
   font-size: 1em;
   text-transform: uppercase;
   text-align: center;
-  color: #ef5350;
+  color: #EF5350;
 }
 h5 {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 1.5em;
-  color: #0097a7;
+  color: #0097A7;
 }
 *,
 h6 {
@@ -113,10 +101,10 @@ button {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 1.25em;
-  color: #0097a7;
+  color: #0097A7;
   text-align: center;
   background-color: #000;
-  border: 3px solid #0097a7;
+  border: 3px solid #0097A7;
   border-radius: 1.5em;
   cursor: pointer;
 }
@@ -125,45 +113,51 @@ a {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 1em;
-  color: #0097a7;
+  color: #0097A7;
   line-height: 1.5em;
 }
 header a {
   position: absolute;
   top: 1.5rem;
+}
+header a#primary {
   left: 1.5rem;
+}
+header a#secondary {
+  right: 1.5rem;
 }
 footer {
   margin-top: 1.5rem;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 1em;
-  color: #f5f5f5;
-  text-align: center;
+  color: #F5F5F5;
   text-align: center;
   opacity: .25;
 }
 ul {
   list-style-type: none;
+}
+ul.list {
   margin: 3.75rem 0;
 }
-ul li {
+ul.list li {
   transition: background-color 0.3s;
-  background-color: #f5f5f5;
+  background-color: #F5F5F5;
   margin-bottom: 0.375rem;
   position: relative;
   border-radius: 0.25rem;
-  box-shadow: 0rem 0rem 0.5rem #000000;
+  box-shadow: 0rem 0rem 0.5rem #000;
 }
-ul li:hover {
+ul.list li:hover {
   background-color: #fff;
   transition: background-color 0.3s;
 }
-ul li a {
+ul.list li a {
   display: flex;
   flex-wrap: wrap;
 }
-ul li img {
+ul.list li img {
   width: 2rem;
   height: 2rem;
   flex: 0 1 auto;
@@ -212,6 +206,17 @@ ul.songs img {
   order: 2;
   margin-left: 0.75rem;
 }
+ul.content {
+  font-family: monospace !important;
+  font-size: 2.25em !important;
+  color: #263238 !important;
+  display: flex;
+  flex-wrap: wrap;
+}
+ul.content li {
+  background-color: orange;
+  margin-right: 0.375rem;
+}
 .fab a {
   position: absolute;
   right: 2rem;
@@ -219,8 +224,8 @@ ul.songs img {
   width: 3.75rem;
   height: 3.75rem;
   border-radius: 50%;
-  background-color: #ef5350;
-  box-shadow: 0rem 0rem 0.5rem #000000;
+  background-color: #EF5350;
+  box-shadow: 0rem 0rem 0.5rem #000;
   z-index: 1000;
   transition: width 0.35s, height 0.35s, background-color 0.35s, border-radius 0.2s;
 }
@@ -235,10 +240,10 @@ ul.songs img {
   display: none;
 }
 .fab.exercises:hover a {
-  background: linear-gradient(55deg, #ef5350, #ffcc80);
+  background: linear-gradient(55deg, #EF5350, #FFCC80);
 }
 .fab.songs:hover a {
-  background: linear-gradient(55deg, #006064, #4db6ac);
+  background: linear-gradient(55deg, #006064, #4DB6AC);
 }
 .fab img {
   position: absolute;
@@ -264,7 +269,7 @@ ul.songs img {
   font-size: 1.25em;
   color: #263238;
   text-align: center;
-  background-color: #f5f5f5;
+  background-color: #F5F5F5;
   border: none;
   border-radius: 1.5rem;
 }
@@ -284,7 +289,7 @@ ul.songs img {
   font-size: 1em;
   text-transform: uppercase;
   text-align: center;
-  color: #ef5350;
+  color: #EF5350;
 }
 #chordList #sortOverlay {
   position: absolute;
@@ -294,9 +299,9 @@ ul.songs img {
   width: 14.25em;
   padding: 1rem 1.5rem;
   margin: auto;
-  background-color: #f5f5f5;
+  background-color: #F5F5F5;
   border-radius: 0.25rem;
-  box-shadow: 0rem 0rem 0.5rem #000000;
+  box-shadow: 0rem 0rem 0.5rem #000;
 }
 #chordList #sortOverlay label {
   display: block;
@@ -320,4 +325,7 @@ ul.songs img {
 }
 #chordList #sortOverlay label:nth-of-type(4) {
   margin-top: 0.75rem;
+}
+.song_detail section:first-of-type {
+  margin-top: 3rem;
 }

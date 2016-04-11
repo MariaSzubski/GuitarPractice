@@ -48,7 +48,8 @@ a{
 header a{
     position: absolute;
     top:24/16rem;
-    left:24/16rem;
+    &#primary    { left:24/16rem;}
+    &#secondary  { right: 24/16rem; }
 }
 
 
@@ -63,33 +64,34 @@ footer{
 
 ul{
     list-style-type: none;
-    margin: 60/16rem 0;
+    &.list{
+        margin: 60/16rem 0;
 
-    li{
-        transition: background-color .3s;
-        background-color: @white;
-        margin-bottom: 6/16rem;
-        position: relative;
-        border-radius: 4/16rem;
-        .shadow;
-        &:hover{
-            background-color: #fff;
+        li{
             transition: background-color .3s;
-        }
+            background-color: @white;
+            margin-bottom: 6/16rem;
+            position: relative;
+            border-radius: 4/16rem;
+            .shadow;
+            &:hover{
+                background-color: #fff;
+                transition: background-color .3s;
+            }
 
-        a{
-            display: flex;
-            flex-wrap: wrap;
+            a{
+                display: flex;
+                flex-wrap: wrap;
 
-        }
+            }
 
-        img{
-            width: 32/16rem;
-            height: 32/16rem;
-            flex:0 1 auto;
+            img{
+                width: 32/16rem;
+                height: 32/16rem;
+                flex:0 1 auto;
+            }
         }
     }
-
     &.landing{
         a{
             padding: 24/16rem;
@@ -144,6 +146,16 @@ ul{
             flex:0 1 auto;
             order:2;
             margin-left: 12/16rem;
+        }
+    }
+    &.content{
+        .f-chords !important;
+
+        display: flex;
+        flex-wrap: wrap;
+        li{
+            background-color: orange;
+            margin-right: 6/16rem;
         }
     }
 }
@@ -260,5 +272,14 @@ ul{
             margin-top:12/16rem;
         }
 
+    }
+}
+
+
+//                          SONGS
+
+.song_detail{
+    section:first-of-type{
+        margin-top: 48/16rem;
     }
 }
