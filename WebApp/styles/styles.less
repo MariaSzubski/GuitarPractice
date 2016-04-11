@@ -12,10 +12,14 @@ body{
     &.bg_exercise   {   .gradient(orange);  }
     &.bg_song       {   .gradient(blue);    }
     &.bg_photo      {   .gradient(guitar);  }
+    &.bg_white{
+        h1          {   color:@black;       }
+        h2, h3      {   color:@black;       }
+    }
 }
 
 body{
-    padding: 12/16rem 24/16rem 0 24/16rem;
+    padding: 12/16rem 6/16rem 0 6/16rem;
 }
 
 h1              { .f-title; }
@@ -101,7 +105,7 @@ ul{
         }
     }
 
-    &.list{
+    &.exercises{
         a{
             align-items: center;
             padding: 1rem 24/16rem;
@@ -122,6 +126,24 @@ ul{
             flex:0 1 auto;
             order:2;
             .f-label(@black);
+        }
+    }
+
+    &.songs{
+        a{
+            align-items: center;
+            padding: 1rem 24/16rem;
+        }
+
+        div{
+            flex:1 1 auto;
+            order:1;
+        }
+
+        img{
+            flex:0 1 auto;
+            order:2;
+            margin-left: 12/16rem;
         }
     }
 }
@@ -148,11 +170,24 @@ ul{
 		width:100%;
 		height:100%;
 		border-radius: 0px;
-		.gradient(orange);
         img{
             display: none;
         }
 	}
+    &.exercises:hover a{
+        .gradient(orange);
+    }
+    &.songs:hover a{
+        .gradient(blue);
+    }
+    img{
+        position: absolute;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        margin: auto;
+    }
 }
 
 //                          LOGIN
@@ -180,5 +215,50 @@ ul{
     a{
         text-align: center;
         width: 100%;
+    }
+}
+
+
+//                          EXERCISES
+
+#chordList{
+    position: relative;
+    margin-top: 48/16rem;
+}
+
+#sortType, #sortOrder{
+    .f-section;
+}
+
+#chordList #sortOverlay{
+    position: absolute;
+    z-index: 1000;
+    left:0;
+    right:0;
+    width: 228/16em;
+    padding: 1rem 24/16rem;
+    margin: auto;
+    background-color: @white;
+    border-radius: 4/16rem;
+    .shadow;
+
+    label{
+        display: block;
+        &.header{
+            .f-section(@black);
+            text-align: left;
+
+        }
+        &.radio{
+            padding: 12/16rem 0;
+            cursor: pointer;
+        }
+        input[type="radio"]{
+            margin: 0 1rem;
+        }
+        &:nth-of-type(4){
+            margin-top:12/16rem;
+        }
+
     }
 }

@@ -17,17 +17,25 @@
 
         <section id="chordList">
             <nav>
-                <h4>Sort By <span id="sortType">Record</span>, <span id="sortOrder">Highest to Lowest</span></h4>
+                <h4>Sort By <span id="sortType">Record</span> | <span id="sortOrder">Highest to Lowest</span></h4>
                 <div id="sortOverlay">
-                    <label>Sort By</label>
-                    <label><input type="radio" value="Record" checked name="sortBy">Record</label>
-                    <label><input type="radio" value="Alphabetical" name="sortBy">Alphabetical</label>
-                    <label>Sort Order</label>
-                    <label><input type="radio" value="A to Z" checked name="sortOrder">A to Z</label>
-                    <label><input type="radio" value="Z to A" name="sortOrder">Z to A</label>
+                    <label class="header">Sort By</label>
+                    <label class="radio">
+                        <input type="radio" value="Record" checked name="sortBy">Record
+                    </label>
+                    <label class="radio">
+                        <input type="radio" value="Alphabetical" name="sortBy">Alphabetical
+                    </label>
+                    <label class="header">Sort Order</label>
+                    <label class="radio">
+                        <input type="radio" value="A to Z" checked name="sortOrder">A to Z
+                    </label>
+                    <label class="radio">
+                        <input type="radio" value="Z to A" name="sortOrder">Z to A
+                    </label>
                 </div>
             </nav>
-            <ul class="list">
+            <ul class="exercises">
                 <li>
                     <a href="song_detail.html">
                         <h5>A#dim7 : A#dim6</h5>
@@ -52,7 +60,7 @@
             </ul>
         </section>
 
-        <aside class="fab">
+        <aside class="fab exercises">
             <a href="exercises_new.html">
                 <img src="img/new.svg" alt="New Chord Combo">
             </a>
