@@ -5,6 +5,7 @@
     text-decoration: none;
     margin:0;
     padding:0;
+    .f-detail;
 }
 
 body{
@@ -13,8 +14,7 @@ body{
     &.bg_song       {   .gradient(blue);    }
     &.bg_photo      {   .gradient(guitar);  }
     &.bg_white{
-        h1          {   color:@black;       }
-        h2, h3      {   color:@black;       }
+        h1, h2, h3, footer { color:@black;  }
     }
 }
 
@@ -26,7 +26,7 @@ h1              { .f-title; }
 h2, h3          { .f-sml; }
 h4              { .f-section; }
 h5              { .f-label; }
-*, h6           { .f-detail; }
+h6              { .f-detail; }
 
 button{
     width: 100%;
@@ -64,6 +64,7 @@ footer{
 
 ul{
     list-style-type: none;
+    padding-left: 0rem;
     &.list{
         margin: 60/16rem 0;
 
@@ -148,14 +149,31 @@ ul{
             margin-left: 12/16rem;
         }
     }
-    &.content{
-        .f-chords !important;
 
+    &.content{
         display: flex;
         flex-wrap: wrap;
+        justify-content:center;
+        margin:0 18/16rem;
         li{
-            background-color: orange;
-            margin-right: 6/16rem;
+            padding: 0 12/16rem;
+            margin: 2/16rem 0;
+            border-right: 1px solid #ddd;
+            .f-chords;
+        }
+    }
+
+    &.strum{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:center;
+        margin:12/16rem 18/16rem 0 18/16rem;
+        padding-left: 0rem;
+        li{
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            margin: 2/16rem;
         }
     }
 }
@@ -262,7 +280,7 @@ ul{
 
         }
         &.radio{
-            padding: 12/16rem 0;
+            padding: 12/16rem 1;
             cursor: pointer;
         }
         input[type="radio"]{
@@ -279,7 +297,71 @@ ul{
 //                          SONGS
 
 .song_detail{
-    section:first-of-type{
-        margin-top: 48/16rem;
+    section:not(#saved){
+        margin-top: 34/16rem;
     }
+}
+
+i{
+    display: inline-block;
+    &.strum_down{
+        width: 20/16rem;
+        height: 20/16rem;
+        background-image: url('../img/strum_down.svg');
+    }
+    &.strum_up{
+        width: 20/16rem;
+        height: 20/16rem;
+        background-image: url('../img/strum_up.svg');
+    }
+    &.strum_blank{
+        width: 20/16rem;
+        height: 20/16rem;
+    }
+    &.strum_mute{
+        width: 10/16rem;
+        height: 10/16rem;
+        margin-top: 4/16rem;
+        background-image: url('../img/strum_mute.svg');
+    }
+    &.strum_accent{
+        width: 10/16rem;
+        height: 10/16rem;
+        margin-top: 4/16rem;
+        background-image: url('../img/strum_accent.svg');
+    }
+}
+
+#saved{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    .gradient(blue);
+    display: flex;
+    flex-flow: column;
+    padding: 12/16rem;
+
+    animation-duration: 1s;
+    animation-delay: .3s;
+    animation-timing-function: ease-in;
+    animation-name: transparentFade;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    h1, #state{
+        .f-title;
+    }
+    img{
+        display: block;
+        width: 128/16rem;
+        height: 102/16rem;
+        margin: auto;
+    }
+}
+
+@keyframes transparentFade{
+    from{ opacity: 1; }
+    to  { opacity: 0; }
 }

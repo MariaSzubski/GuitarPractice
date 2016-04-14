@@ -1,5 +1,17 @@
+/*
+
+H1: Page Title
+H2: Page Sub-Title 1
+H3: Page Sub-Title 2
+H4: Section Header
+H5: Label
+H6: Description
+
+*/
 @import url("https://fonts.googleapis.com/css?family=Lobster");
+
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700");
+
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 /*
 
@@ -12,7 +24,7 @@ H6: Description
 
 */
 .shadow {
-  box-shadow: 0rem 0rem 0.5rem #000;
+  box-shadow: 0rem 0rem 0.5rem #000000;
 }
 .f-lobster {
   font-family: 'Lobster', cursive;
@@ -23,33 +35,37 @@ H6: Description
   font-weight: 400;
 }
 .f-mono {
-  font-family: monospace;
+  font-family: 'Source Code Pro', monospace;
 }
 * {
   box-sizing: border-box;
   text-decoration: none;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: #263238;
+  line-height: 1.5em;
 }
 body.bg_primary {
-  background: linear-gradient(55deg, #000, #37474F);
+  background: linear-gradient(55deg, #000000, #37474f);
 }
 body.bg_exercise {
-  background: linear-gradient(55deg, #EF5350, #FFCC80);
+  background: linear-gradient(55deg, #ef5350, #ffcc80);
 }
 body.bg_song {
-  background: linear-gradient(55deg, #006064, #4DB6AC);
+  background: linear-gradient(55deg, #006064, #4db6ac);
 }
 body.bg_photo {
   background-image: url('../img/bg_amp.jpg');
   background-size: cover;
   background-position: top center;
 }
-body.bg_white h1 {
-  color: #263238;
-}
+body.bg_white h1,
 body.bg_white h2,
-body.bg_white h3 {
+body.bg_white h3,
+body.bg_white footer {
   color: #263238;
 }
 body {
@@ -58,34 +74,33 @@ body {
 h1 {
   font-family: 'Lobster', cursive;
   -webkit-font-smoothing: antialiased;
-  font-size: 2.25em;
+  font-size: 2.25rem;
   text-align: center;
-  color: #F5F5F5;
+  color: #f5f5f5;
 }
 h2,
 h3 {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
-  font-size: 1em;
-  color: #F5F5F5;
+  font-size: 1rem;
+  color: #f5f5f5;
   text-align: center;
 }
 h4 {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-weight: 700;
-  font-size: 1em;
+  font-size: 1rem;
   text-transform: uppercase;
   text-align: center;
-  color: #EF5350;
+  color: #ef5350;
 }
 h5 {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 1.5em;
-  color: #0097A7;
+  color: #0097a7;
 }
-*,
 h6 {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
@@ -100,11 +115,11 @@ button {
   vertical-align: middle;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
-  font-size: 1.25em;
-  color: #0097A7;
+  font-size: 1.25rem;
+  color: #0097a7;
   text-align: center;
   background-color: #000;
-  border: 3px solid #0097A7;
+  border: 3px solid #0097a7;
   border-radius: 1.5em;
   cursor: pointer;
 }
@@ -113,7 +128,7 @@ a {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-size: 1em;
-  color: #0097A7;
+  color: #0097a7;
   line-height: 1.5em;
 }
 header a {
@@ -130,24 +145,26 @@ footer {
   margin-top: 1.5rem;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
-  font-size: 1em;
-  color: #F5F5F5;
+  font-size: 1rem;
+  color: #f5f5f5;
+  text-align: center;
   text-align: center;
   opacity: .25;
 }
 ul {
   list-style-type: none;
+  padding-left: 0rem;
 }
 ul.list {
   margin: 3.75rem 0;
 }
 ul.list li {
   transition: background-color 0.3s;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   margin-bottom: 0.375rem;
   position: relative;
   border-radius: 0.25rem;
-  box-shadow: 0rem 0rem 0.5rem #000;
+  box-shadow: 0rem 0rem 0.5rem #000000;
 }
 ul.list li:hover {
   background-color: #fff;
@@ -207,15 +224,31 @@ ul.songs img {
   margin-left: 0.75rem;
 }
 ul.content {
-  font-family: monospace !important;
-  font-size: 2.25em !important;
-  color: #263238 !important;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 1.125rem;
 }
 ul.content li {
-  background-color: orange;
-  margin-right: 0.375rem;
+  padding: 0 0.75rem;
+  margin: 0.125rem 0;
+  border-right: 1px solid #ddd;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 2.25em;
+  color: #263238;
+}
+ul.strum {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0.75rem 1.125rem 0 1.125rem;
+  padding-left: 0rem;
+}
+ul.strum li {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 0.125rem;
 }
 .fab a {
   position: absolute;
@@ -224,8 +257,8 @@ ul.content li {
   width: 3.75rem;
   height: 3.75rem;
   border-radius: 50%;
-  background-color: #EF5350;
-  box-shadow: 0rem 0rem 0.5rem #000;
+  background-color: #ef5350;
+  box-shadow: 0rem 0rem 0.5rem #000000;
   z-index: 1000;
   transition: width 0.35s, height 0.35s, background-color 0.35s, border-radius 0.2s;
 }
@@ -240,10 +273,10 @@ ul.content li {
   display: none;
 }
 .fab.exercises:hover a {
-  background: linear-gradient(55deg, #EF5350, #FFCC80);
+  background: linear-gradient(55deg, #ef5350, #ffcc80);
 }
 .fab.songs:hover a {
-  background: linear-gradient(55deg, #006064, #4DB6AC);
+  background: linear-gradient(55deg, #006064, #4db6ac);
 }
 .fab img {
   position: absolute;
@@ -266,10 +299,10 @@ ul.content li {
   margin-bottom: 0.75rem;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   color: #263238;
   text-align: center;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   border: none;
   border-radius: 1.5rem;
 }
@@ -286,10 +319,10 @@ ul.content li {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-weight: 700;
-  font-size: 1em;
+  font-size: 1rem;
   text-transform: uppercase;
   text-align: center;
-  color: #EF5350;
+  color: #ef5350;
 }
 #chordList #sortOverlay {
   position: absolute;
@@ -299,9 +332,9 @@ ul.content li {
   width: 14.25em;
   padding: 1rem 1.5rem;
   margin: auto;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   border-radius: 0.25rem;
-  box-shadow: 0rem 0rem 0.5rem #000;
+  box-shadow: 0rem 0rem 0.5rem #000000;
 }
 #chordList #sortOverlay label {
   display: block;
@@ -310,14 +343,14 @@ ul.content li {
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-weight: 700;
-  font-size: 1em;
+  font-size: 1rem;
   text-transform: uppercase;
   text-align: center;
   color: #263238;
   text-align: left;
 }
 #chordList #sortOverlay label.radio {
-  padding: 0.75rem 0;
+  padding: 0.75rem 1;
   cursor: pointer;
 }
 #chordList #sortOverlay label input[type="radio"] {
@@ -326,6 +359,74 @@ ul.content li {
 #chordList #sortOverlay label:nth-of-type(4) {
   margin-top: 0.75rem;
 }
-.song_detail section:first-of-type {
-  margin-top: 3rem;
+.song_detail section:not(#saved) {
+  margin-top: 2.125rem;
+}
+i {
+  display: inline-block;
+}
+i.strum_down {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url('../img/strum_down.svg');
+}
+i.strum_up {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url('../img/strum_up.svg');
+}
+i.strum_blank {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+i.strum_mute {
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-top: 0.25rem;
+  background-image: url('../img/strum_mute.svg');
+}
+i.strum_accent {
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-top: 0.25rem;
+  background-image: url('../img/strum_accent.svg');
+}
+#saved {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(55deg, #006064, #4db6ac);
+  display: flex;
+  flex-flow: column;
+  padding: 0.75rem;
+  animation-duration: 1s;
+  animation-delay: .3s;
+  animation-timing-function: ease-in;
+  animation-name: transparentFade;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+#saved h1,
+#saved #state {
+  font-family: 'Lobster', cursive;
+  -webkit-font-smoothing: antialiased;
+  font-size: 2.25rem;
+  text-align: center;
+  color: #f5f5f5;
+}
+#saved img {
+  display: block;
+  width: 8rem;
+  height: 6.375rem;
+  margin: auto;
+}
+@keyframes transparentFade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
