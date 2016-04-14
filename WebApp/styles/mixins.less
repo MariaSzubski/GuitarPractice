@@ -109,6 +109,28 @@ H6: Description
     color:@color;
 }
 
+.f-form(@_){
+    .f-roboto;
+    color:@white;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+}
+
+.f-form(label){
+    font-size: 1em;
+    font-weight: 700;
+    opacity: .3;
+    text-transform: uppercase;
+}
+
+.f-form(field){
+    font-size: 36/16em;
+    font-weight: 400;
+    opacity: 1;
+}
+
+
+
 //                             FIX THIS
 .f-counter(lg){
     font-size: 80/16em;
@@ -121,6 +143,19 @@ H6: Description
 .f-counter(@_, @color){
     .f-roboto;
     color: @color;
+}
+
+&::placeholder{
+    color: fade(@white, 30%);
+}
+&::-webkit-input-placeholder{
+    color: fade(@white, 30%);
+}
+&::-moz-placeholder{
+    color: fade(@white, 30%);
+}
+&::-ms-input-placeholder{
+    color: fade(@white, 30%);
 }
 
 

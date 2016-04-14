@@ -343,12 +343,17 @@ i{
     flex-flow: column;
     padding: 12/16rem;
 
-    animation-duration: 1s;
+    animation-duration: .8s;
     animation-delay: .3s;
     animation-timing-function: ease-in;
     animation-name: transparentFade;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+
+    @keyframes transparentFade{
+        from{ opacity: 1; }
+        to  { opacity: 0; z-index: -1000;}
+    }
 
     h1, #state{
         .f-title;
@@ -361,7 +366,43 @@ i{
     }
 }
 
-@keyframes transparentFade{
-    from{ opacity: 1; }
-    to  { opacity: 0; }
+
+//                          NEW/EDIT SONG
+
+
+.form{
+    margin-top: 1rem;
+    display: flex;
+    flex-flow: column;
+    label { .f-form(label); height: 20/16rem;}
+    input {
+        .f-form(field);
+        background:none;
+        border: 0px;
+        border-bottom: 1px solid fade(@white, 15%);
+
+        margin-bottom: 12/16rem;
+        &::placeholder{
+            color: fade(@white, 30%);
+        }
+        &::-webkit-input-placeholder{
+            color: fade(@white, 30%);
+        }
+        &::-moz-placeholder{
+            color: fade(@white, 30%);
+        }
+        &::-ms-input-placeholder{
+            color: fade(@white, 30%);
+        }
+    }
+}
+
+#save{
+    display:inline-block;
+    width: 100%;
+    margin-top: 24/16rem;
+    img{
+        width: 24/16rem;
+        margin: auto;
+    }
 }

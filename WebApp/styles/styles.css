@@ -37,6 +37,18 @@ H6: Description
 .f-mono {
   font-family: 'Source Code Pro', monospace;
 }
+::placeholder {
+  color: rgba(245, 245, 245, 0.3);
+}
+::-webkit-input-placeholder {
+  color: rgba(245, 245, 245, 0.3);
+}
+::-moz-placeholder {
+  color: rgba(245, 245, 245, 0.3);
+}
+::-ms-input-placeholder {
+  color: rgba(245, 245, 245, 0.3);
+}
 * {
   box-sizing: border-box;
   text-decoration: none;
@@ -401,12 +413,21 @@ i.strum_accent {
   display: flex;
   flex-flow: column;
   padding: 0.75rem;
-  animation-duration: 1s;
+  animation-duration: .8s;
   animation-delay: .3s;
   animation-timing-function: ease-in;
   animation-name: transparentFade;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+@keyframes transparentFade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1000;
+  }
 }
 #saved h1,
 #saved #state {
@@ -422,11 +443,55 @@ i.strum_accent {
   height: 6.375rem;
   margin: auto;
 }
-@keyframes transparentFade {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+.form {
+  margin-top: 1rem;
+  display: flex;
+  flex-flow: column;
+}
+.form label {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+  color: #f5f5f5;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1em;
+  font-weight: 700;
+  opacity: .3;
+  text-transform: uppercase;
+  height: 1.25rem;
+}
+.form input {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+  color: #f5f5f5;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  font-size: 2.25em;
+  font-weight: 400;
+  opacity: 1;
+  background: none;
+  border: 0px;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.15);
+  margin-bottom: 0.75rem;
+}
+.form input::placeholder {
+  color: rgba(245, 245, 245, 0.3);
+}
+.form input::-webkit-input-placeholder {
+  color: rgba(245, 245, 245, 0.3);
+}
+.form input::-moz-placeholder {
+  color: rgba(245, 245, 245, 0.3);
+}
+.form input::-ms-input-placeholder {
+  color: rgba(245, 245, 245, 0.3);
+}
+#save {
+  display: inline-block;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+#save img {
+  width: 1.5rem;
+  margin: auto;
 }

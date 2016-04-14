@@ -37,3 +37,15 @@ H6: Description
 .f-mono {
   font-family: 'Source Code Pro', monospace;
 }
+::placeholder {
+  color: rgba(245, 245, 245, 0.3);
+}
+::-webkit-input-placeholder {
+  color: rgba(245, 245, 245, 0.3);
+}
+::-moz-placeholder {
+  color: rgba(245, 245, 245, 0.3);
+}
+::-ms-input-placeholder {
+  color: rgba(245, 245, 245, 0.3);
+}
