@@ -487,11 +487,111 @@ i.strum_accent {
   color: rgba(245, 245, 245, 0.3);
 }
 #save {
-  display: inline-block;
-  width: 100%;
-  margin-top: 1.5rem;
+  display: block;
+  width: 6rem;
+  margin: 0.75rem auto 0 auto;
 }
 #save img {
+  display: block;
+  box-sizing: content-box;
   width: 1.5rem;
+  padding: 0.75rem;
   margin: auto;
+}
+.forms h4,
+.forms .content *,
+.forms button {
+  color: #f5f5f5;
+  -webkit-font-smoothing: antialiased;
+}
+.forms #s_new {
+  margin-top: 1.5rem;
+}
+.forms #s_new button:first-of-type {
+  border-color: #f5f5f5;
+  background: none;
+  color: #f5f5f5;
+  margin: 0rem;
+}
+.forms #s_new button:first-of-type:hover {
+  mix-blend-mode: overlay;
+}
+.forms #s_new button:last-of-type {
+  border: none;
+  background: none;
+  height: 3rem;
+  margin: 0.375rem 0 0 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f5f5f5;
+}
+.forms #s_new button:last-of-type:hover {
+  mix-blend-mode: overlay;
+}
+.forms #s_new i {
+  display: inline-block;
+}
+.forms #s_new i.plus {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-image: url('../img/plus.svg');
+}
+.forms section {
+  margin-top: 1.5rem;
+}
+.forms .content li {
+  border-right: 1px solid rgba(245, 245, 245, 0.25);
+}
+.keyboard {
+  z-index: 1000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 36%;
+  padding: 1rem 1.5rem;
+  background-color: #f5f5f5;
+}
+.keyboard .alpha,
+.keyboard .accent {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-bottom: 0.125rem;
+}
+.keyboard .alpha button,
+.keyboard .accent button {
+  flex: 1 0 auto;
+  width: auto;
+  height: 2rem;
+  margin: 0rem;
+  border: none;
+  border-radius: 0.625rem;
+  color: #0097a7;
+  background-color: #f5f5f5;
+  outline: none;
+}
+.keyboard .accent button {
+  flex-basis: 50%;
+}
+.keyboard .active {
+  background-color: rgba(0, 151, 167, 0.1) !important;
+}
+.keyboard .submit {
+  display: flex;
+}
+.keyboard .submit button {
+  margin: 0.75rem 0;
+  background: none;
+  color: #0097a7;
+}
+.keyboard .submit button:hover {
+  background-color: rgba(0, 151, 167, 0.1);
+}
+.keyboard .submit button:first-of-type {
+  margin-right: 0.75rem;
 }

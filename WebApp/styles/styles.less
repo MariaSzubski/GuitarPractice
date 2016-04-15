@@ -13,7 +13,7 @@ body{
     &.bg_exercise   {   .gradient(orange);  }
     &.bg_song       {   .gradient(blue);    }
     &.bg_photo      {   .gradient(guitar);  }
-    &.bg_white{
+    &.bg_white {
         h1, h2, h3, footer { color:@black;  }
     }
 }
@@ -398,11 +398,112 @@ i{
 }
 
 #save{
-    display:inline-block;
-    width: 100%;
-    margin-top: 24/16rem;
+    display:block;
+    width: 96/16rem;
+    margin: 12/16rem auto 0 auto;
     img{
+        display: block;
+        box-sizing: content-box;
         width: 24/16rem;
+        padding: 12/16rem;
         margin: auto;
     }
+}
+
+
+&.forms {
+    h4, .content *, button  {
+        color:@white;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    #s_new {
+        margin-top: 24/16rem;
+        button:first-of-type{
+            border-color: @white;
+            background:none;
+            color: @white;
+            margin: 0rem;
+            &:hover{
+                mix-blend-mode: overlay;
+            }
+        }
+        button:last-of-type{
+            border:none;
+            background: none;
+            height: 48/16rem;
+            margin: 6/16rem 0 0 0;
+            .f-section(@white);
+            &:hover{
+                mix-blend-mode: overlay;
+            }
+        }
+        i{
+            display: inline-block;
+            &.plus{
+                width: 12/16rem;
+                height: 12/16rem;
+                background-image: url('../img/plus.svg');
+            }
+        }
+    }
+    section{
+        margin-top: 24/16rem;
+    }
+    .content li{
+        border-right: 1px solid fade(@white, 25%);
+    }
+}
+
+
+
+//                          KEYBOARD
+
+.keyboard{
+    z-index: 1000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 36%;
+    padding: 1rem 24/16rem;
+    background-color: @white;
+    & .alpha, & .accent{
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        margin-bottom: 2/16rem;
+    }
+    & .alpha button, & .accent button{
+        flex: 1 0 auto;
+        width: auto;
+        height: 32/16rem;
+        margin: 0rem;
+        border: none;
+        border-radius: 10/16rem;
+        color: @teal;
+        background-color: @white;
+        outline: none;
+    }
+    & .accent button{
+        flex-basis: 50%;
+    }
+    & .active{
+        background-color: fade(@teal,10%) !important;
+    }
+    & .submit{
+        display: flex;
+        & button{
+            margin: 12/16rem 0;
+            background: none;
+            color: @teal;
+            &:hover{
+                background-color: fade(@teal,10%);
+            }
+        }
+        & button:first-of-type{
+            margin-right: 12/16rem;
+        }
+    }
+
 }
