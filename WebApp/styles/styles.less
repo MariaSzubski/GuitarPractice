@@ -76,7 +76,7 @@ ul{
             margin-bottom: 6/16rem;
             position: relative;
             border-radius: 4/16rem;
-            .shadow;
+            .shadow(dark);
             &:hover{
                 background-color: #fff;
                 transition: background-color .3s;
@@ -191,7 +191,7 @@ ul{
     	height: 60/16rem;
     	border-radius:50%;
     	background-color: @red;
-    	.shadow;
+    	.shadow(dark);
         z-index: 1000;
         transition: width .35s,
     				height .35s,
@@ -276,7 +276,7 @@ ul{
     margin: auto;
     background-color: @white;
     border-radius: 4/16rem;
-    .shadow;
+    .shadow(dark);
 
     label{
         display: block;
@@ -518,4 +518,98 @@ i{
 
 .bg_exercise .keyboard{
     .keyboard_mixin(@red);
+}
+
+
+
+//                          exercises
+
+.chordHeader h1{ .f-label(@white); }
+
+#timer{
+    position: relative;
+    width: 312/16rem;
+    margin: 48/16rem auto;
+    height: 156/16rem;
+    & > img, #arc{
+        width: 312/16rem;
+        height: 156/16rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #control{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        max-width: 150/16rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        p{
+            .f-timer;
+            line-height: 60/16rem;
+        }
+        img{
+            box-sizing: content-box;
+            width: 30/16rem;
+            height:30/16rem;
+            padding: 12/16rem;
+        }
+    }
+
+    #arc    { z-index: 1; }
+    & > img { z-index: 2; }
+    #control{ z-index: 3; }
+}
+
+#drawer{
+    position: absolute;
+    top:400/16rem;
+    left:0;
+    width: 100%;
+    background-color: white;
+    //height: 400/16rem;
+    article {
+        h4{
+            color: @teal;
+            line-height: 36/16rem;
+            height: 36/16rem;
+            border-bottom: 1px solid fade(@black, 10%);
+        }
+        ul{
+            margin: 6/16rem;
+        }
+        li{
+            .shadow(light);
+            background-color: white;
+        }
+        & .active{
+            background-color: @teal;
+            h5, h6{
+                color:@white;
+                -webkit-font-smoothing: antialiased;
+            }
+            &:hover{
+                background-color: fade(@teal, 90%);
+            }
+        }
+    }
+    & .submit{
+        display: flex;
+        justify-content: center;
+        & button{
+            background: none;
+            color: @orange;
+            border: 3px solid @orange;
+            &:hover{
+                background-color: fade(@orange,15%);
+            }
+        }
+        & button:first-of-type{
+            margin-right: 12/16rem;
+        }
+    }
 }

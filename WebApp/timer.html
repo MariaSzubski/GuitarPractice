@@ -17,44 +17,43 @@
 
         <section id="timer">
             <img src="img/track.svg" alt="">
-            <canvas id="timer_arc" width="100%" height="25%"></canvas>
-            <div id="timer_control">
+            <canvas id="arc"></canvas>
+            <div id="control">
                 <p>1:00</p>
                 <img src="img/play.svg" id="toggleBtn" alt="Start Timer">
             </div>
         </section>
 
-        <section id="drawer_container">
-            <article id="drawer_chords">
+        <section id="drawer">
+            <article id="chords">
                 <h4>Switch to Another Chord</h4>
-                <ul class="list">
+                <ul class="exercises list">
                     <li class="active">
-                        <a href="exercises.html">
+                        <a href="timer.html">
                             <h5>A#dim7 : A#dim6</h5>
                             <h6>105</h6>
-                            <img src="img/arrow.svg" alt="Next">
                         </a>
                     </li>
                     <li>
-                        <a href="exercises.html">
+                        <a href="timer.html">
                             <h5>D : E</h5>
                             <h6>120</h6>
-                            <img src="img/arrow.svg" alt="Next">
                         </a>
                     </li>
                     <li>
-                        <a href="exercises.html">
+                        <a href="timer.html">
                             <h5>Cm4 : D</h5>
                             <h6>89 </h6>
-                            <img src="img/arrow.svg" alt="Next">
                         </a>
                     </li>
                 </ul>
             </article>
-            <article id="drawer_changes">
+            <article id="changes">
                 <h4>Log Chord Changes</h4>
                 <input type="number">
-                <button>Log</button>
+                <div class="submit">
+                    <button>Log</button>
+                </div>
                 <article>
                     <h4>History</h4>
                     <ul>
@@ -84,7 +83,7 @@
                     </ul>
                 </article>
             </article>
-            <article id="drawer_charts">
+            <article id="charts">
                 <h4>Charts</h4>
                 <canvas id="chart" width="100%" height="100%"></canvas>
                 <section id="axis">
@@ -107,10 +106,5 @@
                 <img src="img/page.svg" alt="Page 3">
             </div>
         </section>
-
-        <footer>
-            &copy; Maria Szubski 2016
-        </footer>
-
     </body>
 </html>

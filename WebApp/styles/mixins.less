@@ -45,10 +45,13 @@ H6: Description
     background-position: top center;
 }
 
-.shadow{
+.shadow(dark){
     box-shadow: 0rem 0rem 8/16rem #000;
 }
 
+.shadow(light){
+    box-shadow: 0rem 0rem 8/16rem fade(@black, 25%);
+}
 
 
 //                          FONTS
@@ -134,6 +137,15 @@ H6: Description
     font-size: 36/16em;
     font-weight: 400;
     opacity: 1;
+}
+
+.f-timer{
+    .f-roboto;
+    font-size: 60/16em;
+    font-weight: 400;
+    color:@white;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
 }
 
 

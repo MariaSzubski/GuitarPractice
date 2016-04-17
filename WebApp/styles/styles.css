@@ -1,12 +1,10 @@
 /*
-
 H1: Page Title
-H2: Page Sub-Title 1
-H3: Page Sub-Title 2
+H2: Page Sub-Title, Line 1
+H3: Page Sub-Title, Line 2
 H4: Section Header
 H5: Label
 H6: Description
-
 */
 @import url("https://fonts.googleapis.com/css?family=Lobster");
 
@@ -14,18 +12,13 @@ H6: Description
 
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 /*
-
 H1: Page Title
-H2: Page Sub-Title 1
-H3: Page Sub-Title 2
+H2: Page Sub-Title, Line 1
+H3: Page Sub-Title, Line 2
 H4: Section Header
 H5: Label
 H6: Description
-
 */
-.shadow {
-  box-shadow: 0rem 0rem 0.5rem #000000;
-}
 .f-lobster {
   font-family: 'Lobster', cursive;
   -webkit-font-smoothing: antialiased;
@@ -36,6 +29,15 @@ H6: Description
 }
 .f-mono {
   font-family: 'Source Code Pro', monospace;
+}
+.f-timer {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 3.75em;
+  font-weight: 400;
+  color: #f5f5f5;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
 }
 ::placeholder {
   color: rgba(245, 245, 245, 0.3);
@@ -783,3 +785,107 @@ i.strum_accent {
 .bg_exercise .keyboard.strum .alpha button {
   max-width: 2.75rem;
 }
+.chordHeader h1 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  color: #f5f5f5;
+}
+#timer {
+  position: relative;
+  width: 19.5rem;
+  margin: 3rem auto;
+  height: 9.75rem;
+}
+#timer  > img,
+#timer #arc {
+  width: 19.5rem;
+  height: 9.75rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#timer #control {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  max-width: 9.375rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+#timer #control p {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
+  font-size: 3.75em;
+  font-weight: 400;
+  color: #f5f5f5;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  line-height: 3.75rem;
+}
+#timer #control img {
+  box-sizing: content-box;
+  width: 1.875rem;
+  height: 1.875rem;
+  padding: 0.75rem;
+}
+#timer #arc {
+  z-index: 1;
+}
+#timer  > img {
+  z-index: 2;
+}
+#timer #control {
+  z-index: 3;
+}
+#drawer {
+  position: absolute;
+  top: 25rem;
+  left: 0;
+  width: 100%;
+  background-color: white;
+}
+#drawer article h4 {
+  color: #0097a7;
+  line-height: 2.25rem;
+  height: 2.25rem;
+  border-bottom: 1px solid rgba(38, 50, 56, 0.1);
+}
+#drawer article ul {
+  margin: 0.375rem;
+}
+#drawer article li {
+  box-shadow: 0rem 0rem 0.5rem rgba(38, 50, 56, 0.25);
+  background-color: white;
+}
+#drawer article .active {
+  background-color: #0097a7;
+}
+#drawer article .active h5,
+#drawer article .active h6 {
+  color: #f5f5f5;
+  -webkit-font-smoothing: antialiased;
+}
+#drawer article .active:hover {
+  background-color: rgba(0, 151, 167, 0.9);
+}
+#drawer .submit {
+  display: flex;
+  justify-content: center;
+}
+#drawer .submit button {
+  background: none;
+  color: #ff8a65;
+  border: 3px solid #ff8a65;
+}
+#drawer .submit button:hover {
+  background-color: rgba(255, 138, 101, 0.15);
+}
+#drawer .submit button:first-of-type {
+  margin-right: 0.75rem;
+}
+
+/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */
