@@ -243,7 +243,9 @@ ul.content {
 }
 ul.content li {
   padding: 0 0.75rem;
-  margin: 0.125rem 0;
+  margin: 0.375rem 0;
+  height: 2.75rem;
+  line-height: 2.75rem;
   border-right: 1px solid #ddd;
   font-family: 'Source Code Pro', monospace;
   font-size: 2.25em;
@@ -413,16 +415,17 @@ i.strum_accent {
   display: flex;
   flex-flow: column;
   padding: 0.75rem;
-  animation-duration: .8s;
-  animation-delay: .3s;
-  animation-timing-function: ease-in;
+  opacity: .95;
+  animation-duration: .7s;
+  animation-delay: 1s;
+  animation-timing-function: ease;
   animation-name: transparentFade;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 @keyframes transparentFade {
   from {
-    opacity: 1;
+    opacity: .95;
   }
   to {
     opacity: 0;
@@ -442,6 +445,9 @@ i.strum_accent {
   width: 8rem;
   height: 6.375rem;
   margin: auto;
+}
+.bg_exercise .form {
+  margin-top: 3.75rem;
 }
 .form {
   margin-top: 1rem;
@@ -505,22 +511,13 @@ i.strum_accent {
   -webkit-font-smoothing: antialiased;
 }
 .forms #s_new {
-  margin-top: 1.5rem;
+  margin-top: 0.75rem;
 }
-.forms #s_new button:first-of-type {
-  border-color: #f5f5f5;
-  background: none;
-  color: #f5f5f5;
-  margin: 0rem;
-}
-.forms #s_new button:first-of-type:hover {
-  mix-blend-mode: overlay;
-}
-.forms #s_new button:last-of-type {
+.forms #s_new button {
   border: none;
   background: none;
   height: 3rem;
-  margin: 0.375rem 0 0 0;
+  margin: 0;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
   font-weight: 700;
@@ -529,7 +526,7 @@ i.strum_accent {
   text-align: center;
   color: #f5f5f5;
 }
-.forms #s_new button:last-of-type:hover {
+.forms #s_new button:hover {
   mix-blend-mode: overlay;
 }
 .forms #s_new i {
@@ -546,52 +543,243 @@ i.strum_accent {
 .forms .content li {
   border-right: 1px solid rgba(245, 245, 245, 0.25);
 }
-.keyboard {
+.forms .content li.active {
+  background-color: rgba(245, 245, 245, 0.2) !important;
+}
+#s_strum ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#s_strum ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1.75rem;
+  padding: 0.625rem;
+  border-radius: 0.625rem;
+}
+#s_strum ul li.active {
+  background-color: rgba(245, 245, 245, 0.2) !important;
+}
+#s_strum i {
+  display: inline-block;
+}
+#s_strum i.strum_down {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url('../img/strum_down_white.svg');
+}
+#s_strum i.strum_up {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url('../img/strum_up_white.svg');
+}
+#s_strum i.strum_blank {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+#s_strum i.strum_mute {
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-top: 0.25rem;
+  background-image: url('../img/strum_mute_white.svg');
+}
+#s_strum i.strum_accent {
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-top: 0.25rem;
+  background-image: url('../img/strum_accent_white.svg');
+}
+.bg_song .keyboard {
   z-index: 1000;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 36%;
+  height: 14.375rem;
   padding: 1rem 1.5rem;
   background-color: #f5f5f5;
 }
-.keyboard .alpha,
-.keyboard .accent {
+.bg_song .keyboard .alpha,
+.bg_song .keyboard .accent {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   margin-bottom: 0.125rem;
 }
-.keyboard .alpha button,
-.keyboard .accent button {
+.bg_song .keyboard .alpha button,
+.bg_song .keyboard .accent button {
   flex: 1 0 auto;
   width: auto;
   height: 2rem;
-  margin: 0rem;
-  border: none;
+  margin: 0rem 0.0625rem;
+  border: 1px solid rgba(0, 151, 167, 0);
   border-radius: 0.625rem;
   color: #0097a7;
   background-color: #f5f5f5;
   outline: none;
 }
-.keyboard .accent button {
+.bg_song .keyboard .alpha button:hover,
+.bg_song .keyboard .accent button:hover {
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 151, 167, 0.4);
+}
+.bg_song .keyboard .accent button {
   flex-basis: 50%;
 }
-.keyboard .active {
-  background-color: rgba(0, 151, 167, 0.1) !important;
+.bg_song .keyboard .active {
+  background-color: rgba(0, 151, 167, 0.2) !important;
 }
-.keyboard .submit {
+.bg_song .keyboard .submit {
   display: flex;
 }
-.keyboard .submit button {
+.bg_song .keyboard .submit button {
   margin: 0.75rem 0;
   background: none;
   color: #0097a7;
+  border: 3px solid #0097a7;
 }
-.keyboard .submit button:hover {
-  background-color: rgba(0, 151, 167, 0.1);
+.bg_song .keyboard .submit button:hover {
+  background-color: rgba(0, 151, 167, 0.15);
 }
-.keyboard .submit button:first-of-type {
+.bg_song .keyboard .submit button:first-of-type {
   margin-right: 0.75rem;
+}
+.bg_song .keyboard i {
+  display: inline-block;
+}
+.bg_song .keyboard i.strum_down {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url('../img/strum_down_teal.svg');
+}
+.bg_song .keyboard i.strum_up {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url('../img/strum_up_teal.svg');
+}
+.bg_song .keyboard i.strum_blank {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url('../img/strum_blank_teal.svg');
+}
+.bg_song .keyboard i.strum_mute {
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-top: 0.25rem;
+  background-image: url('../img/strum_mute_teal.svg');
+}
+.bg_song .keyboard i.strum_accent {
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-top: 0.25rem;
+  background-image: url('../img/strum_accent_teal.svg');
+}
+.bg_song .keyboard.strum .alpha {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.bg_song .keyboard.strum .alpha h4 {
+  color: #0097a7;
+  flex-basis: 100%;
+}
+.bg_song .keyboard.strum .alpha button {
+  max-width: 2.75rem;
+}
+.bg_exercise .keyboard {
+  z-index: 1000;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 14.375rem;
+  padding: 1rem 1.5rem;
+  background-color: #f5f5f5;
+}
+.bg_exercise .keyboard .alpha,
+.bg_exercise .keyboard .accent {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-bottom: 0.125rem;
+}
+.bg_exercise .keyboard .alpha button,
+.bg_exercise .keyboard .accent button {
+  flex: 1 0 auto;
+  width: auto;
+  height: 2rem;
+  margin: 0rem 0.0625rem;
+  border: 1px solid rgba(239, 83, 80, 0);
+  border-radius: 0.625rem;
+  color: #ef5350;
+  background-color: #f5f5f5;
+  outline: none;
+}
+.bg_exercise .keyboard .alpha button:hover,
+.bg_exercise .keyboard .accent button:hover {
+  box-sizing: border-box;
+  border: 1px solid rgba(239, 83, 80, 0.4);
+}
+.bg_exercise .keyboard .accent button {
+  flex-basis: 50%;
+}
+.bg_exercise .keyboard .active {
+  background-color: rgba(239, 83, 80, 0.2) !important;
+}
+.bg_exercise .keyboard .submit {
+  display: flex;
+}
+.bg_exercise .keyboard .submit button {
+  margin: 0.75rem 0;
+  background: none;
+  color: #ef5350;
+  border: 3px solid #ef5350;
+}
+.bg_exercise .keyboard .submit button:hover {
+  background-color: rgba(239, 83, 80, 0.15);
+}
+.bg_exercise .keyboard .submit button:first-of-type {
+  margin-right: 0.75rem;
+}
+.bg_exercise .keyboard i {
+  display: inline-block;
+}
+.bg_exercise .keyboard i.strum_down {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url('../img/strum_down_teal.svg');
+}
+.bg_exercise .keyboard i.strum_up {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url('../img/strum_up_teal.svg');
+}
+.bg_exercise .keyboard i.strum_blank {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url('../img/strum_blank_teal.svg');
+}
+.bg_exercise .keyboard i.strum_mute {
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-top: 0.25rem;
+  background-image: url('../img/strum_mute_teal.svg');
+}
+.bg_exercise .keyboard i.strum_accent {
+  width: 0.625rem;
+  height: 0.625rem;
+  margin-top: 0.25rem;
+  background-image: url('../img/strum_accent_teal.svg');
+}
+.bg_exercise .keyboard.strum .alpha {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.bg_exercise .keyboard.strum .alpha h4 {
+  color: #ef5350;
+  flex-basis: 100%;
+}
+.bg_exercise .keyboard.strum .alpha button {
+  max-width: 2.75rem;
 }

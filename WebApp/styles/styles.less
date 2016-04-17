@@ -60,6 +60,8 @@ footer{
     opacity: .25;
 }
 
+
+
 //                          COMPONENTS
 
 ul{
@@ -157,7 +159,9 @@ ul{
         margin:0 18/16rem;
         li{
             padding: 0 12/16rem;
-            margin: 2/16rem 0;
+            margin: 6/16rem 0;
+            height: 44/16rem;
+            line-height: 44/16rem;
             border-right: 1px solid #ddd;
             .f-chords;
         }
@@ -219,6 +223,8 @@ ul{
         margin: auto;
     }
 }
+
+
 
 //                          LOGIN
 
@@ -294,6 +300,7 @@ ul{
 }
 
 
+
 //                          SONGS
 
 .song_detail{
@@ -342,16 +349,16 @@ i{
     display: flex;
     flex-flow: column;
     padding: 12/16rem;
-
-    animation-duration: .8s;
-    animation-delay: .3s;
-    animation-timing-function: ease-in;
+    opacity: .95;
+    animation-duration: .7s;
+    animation-delay: 1s;
+    animation-timing-function: ease;
     animation-name: transparentFade;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 
     @keyframes transparentFade{
-        from{ opacity: 1; }
+        from{ opacity: .95; }
         to  { opacity: 0; z-index: -1000;}
     }
 
@@ -367,9 +374,12 @@ i{
 }
 
 
+
 //                          NEW/EDIT SONG
 
-
+.bg_exercise .form{
+    margin-top: 60/16rem;
+}
 .form{
     margin-top: 1rem;
     display: flex;
@@ -418,21 +428,12 @@ i{
     }
 
     #s_new {
-        margin-top: 24/16rem;
-        button:first-of-type{
-            border-color: @white;
-            background:none;
-            color: @white;
-            margin: 0rem;
-            &:hover{
-                mix-blend-mode: overlay;
-            }
-        }
-        button:last-of-type{
+        margin-top: 12/16rem;
+        button{
             border:none;
             background: none;
             height: 48/16rem;
-            margin: 6/16rem 0 0 0;
+            margin: 0;
             .f-section(@white);
             &:hover{
                 mix-blend-mode: overlay;
@@ -452,6 +453,58 @@ i{
     }
     .content li{
         border-right: 1px solid fade(@white, 25%);
+        &.active{
+            background-color: fade(@white,20%) !important;
+        }
+    }
+}
+
+#s_strum {
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:center;
+        li{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 28/16rem;
+            padding: 10/16rem;
+            border-radius: 10/16rem;
+            &.active{
+                background-color: fade(@white,20%) !important;
+            }
+        }
+    }
+
+    i{
+        display: inline-block;
+        &.strum_down{
+            width: 20/16rem;
+            height: 20/16rem;
+            background-image: url('../img/strum_down_white.svg');
+        }
+        &.strum_up{
+            width: 20/16rem;
+            height: 20/16rem;
+            background-image: url('../img/strum_up_white.svg');
+        }
+        &.strum_blank{
+            width: 20/16rem;
+            height: 20/16rem;
+        }
+        &.strum_mute{
+            width: 10/16rem;
+            height: 10/16rem;
+            margin-top: 4/16rem;
+            background-image: url('../img/strum_mute_white.svg');
+        }
+        &.strum_accent{
+            width: 10/16rem;
+            height: 10/16rem;
+            margin-top: 4/16rem;
+            background-image: url('../img/strum_accent_white.svg');
+        }
     }
 }
 
@@ -459,51 +512,10 @@ i{
 
 //                          KEYBOARD
 
-.keyboard{
-    z-index: 1000;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 36%;
-    padding: 1rem 24/16rem;
-    background-color: @white;
-    & .alpha, & .accent{
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-start;
-        margin-bottom: 2/16rem;
-    }
-    & .alpha button, & .accent button{
-        flex: 1 0 auto;
-        width: auto;
-        height: 32/16rem;
-        margin: 0rem;
-        border: none;
-        border-radius: 10/16rem;
-        color: @teal;
-        background-color: @white;
-        outline: none;
-    }
-    & .accent button{
-        flex-basis: 50%;
-    }
-    & .active{
-        background-color: fade(@teal,10%) !important;
-    }
-    & .submit{
-        display: flex;
-        & button{
-            margin: 12/16rem 0;
-            background: none;
-            color: @teal;
-            &:hover{
-                background-color: fade(@teal,10%);
-            }
-        }
-        & button:first-of-type{
-            margin-right: 12/16rem;
-        }
-    }
+.bg_song .keyboard{
+    .keyboard_mixin;
+}
 
+.bg_exercise .keyboard{
+    .keyboard_mixin(@red);
 }

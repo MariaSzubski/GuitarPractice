@@ -1,12 +1,10 @@
 /*
-
 H1: Page Title
-H2: Page Sub-Title 1
-H3: Page Sub-Title 2
+H2: Page Sub-Title, Line 1
+H3: Page Sub-Title, Line 2
 H4: Section Header
 H5: Label
 H6: Description
-
 */
 @import url("https://fonts.googleapis.com/css?family=Lobster");
 
@@ -14,14 +12,12 @@ H6: Description
 
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 /*
-
 H1: Page Title
-H2: Page Sub-Title 1
-H3: Page Sub-Title 2
+H2: Page Sub-Title, Line 1
+H3: Page Sub-Title, Line 2
 H4: Section Header
 H5: Label
 H6: Description
-
 */
 .shadow {
   box-shadow: 0rem 0rem 0.5rem #000000;

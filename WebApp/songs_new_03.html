@@ -5,12 +5,12 @@
         <title>Guitar Practice</title>
         <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title">
     </head>
-    <body class="bg_song">
+    <body class="bg_song forms">
 
         <header>
             <h1>New Song</h1>
             <h2>Step 3: Strum Pattern</h2>
-            <a href="songs.html">
+            <a href="songs_new_02.html">
                 <img src="img/back.svg" alt="Back">
             </a>
         </header>
@@ -29,26 +29,27 @@
         </section>
 
         <section id="s_new">
-            <button>New Bar</button>
-            <button class="secondary"><i class="plus"></i> New Section</button>
+            <button class="secondary"><i class="plus"></i> New Pattern</button>
         </section>
 
-        <section class="keyboard" id="keyboard_strum">
+        <section class="keyboard strum">
             <div class="alpha">
                 <h4>Direction</h4>
                 <button><i class="strum_down"></i></button>
-                <button><i class="strum_up"></i></button>
+                <button class="active"><i class="strum_up"></i></button>
                 <button><i class="strum_blank"></i></button>
             </div>
             <div class="alpha">
                 <h4>Accent</h4>
-                <button><i class="strum_mute"></i></button>
+                <button class="active"><i class="strum_mute"></i></button>
                 <button><i class="strum_accent"></i></button>
             </div>
-            <button>Add Symbol</button>
+            <div class="submit">
+                <button>Add Symbol</button>
+            </div>
         </section>
 
-        <a href="songs_detail.html">
+        <a href="song_detail.html" id="save">
             <img src="img/next.svg" alt="Save &amp; Continue">
         </a>
 

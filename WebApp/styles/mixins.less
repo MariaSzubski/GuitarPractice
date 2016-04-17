@@ -2,16 +2,18 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700");
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 
-/*
 
+//                          HEADER TAG DESCRIPTIONS
+/*
 H1: Page Title
-H2: Page Sub-Title 1
-H3: Page Sub-Title 2
+H2: Page Sub-Title, Line 1
+H3: Page Sub-Title, Line 2
 H4: Section Header
 H5: Label
 H6: Description
-
 */
+
+
 
 //                          COLORS
 
@@ -20,6 +22,8 @@ H6: Description
 @teal: #0097A7;
 @red: #EF5350;
 @orange: #FF8A65;
+
+
 
 //                          GRADIENT BACKGROUNDS
 
@@ -44,6 +48,9 @@ H6: Description
 .shadow{
     box-shadow: 0rem 0rem 8/16rem #000;
 }
+
+
+
 //                          FONTS
 
 .f-lobster{
@@ -159,6 +166,7 @@ H6: Description
 }
 
 
+
 //                          BUTTONS
 .a-button(@color){
     border: 3px solid @color;
@@ -170,4 +178,103 @@ H6: Description
     color:@color;
     text-align: center;
     vertical-align: middle;
+}
+
+
+
+//                          CUSTOM KEYBOARD
+
+.keyboard_mixin(@color:@teal){
+    z-index: 1000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 230/16rem;
+    padding: 1rem 24/16rem;
+    background-color: @white;
+    & .alpha, & .accent{
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        margin-bottom: 2/16rem;
+
+    }
+    & .alpha button, & .accent button{
+        flex: 1 0 auto;
+        width: auto;
+        height: 32/16rem;
+        margin: 0rem 1/16rem;
+        border: 1px solid fade(@color,0%);
+        border-radius: 10/16rem;
+        color: @color;
+        background-color: @white;
+        outline: none;
+        &:hover{
+            box-sizing: border-box;
+            border:1px solid fade(@color,40%);
+        }
+    }
+    & .accent button{
+        flex-basis: 50%;
+    }
+    & .active{
+        background-color: fade(@color,20%) !important;
+    }
+    & .submit{
+        display: flex;
+        & button{
+            margin: 12/16rem 0;
+            background: none;
+            color: @color;
+            border: 3px solid @color;
+            &:hover{
+                background-color: fade(@color,15%);
+            }
+        }
+        & button:first-of-type{
+            margin-right: 12/16rem;
+        }
+    }
+    i{
+        display: inline-block;
+        &.strum_down{
+            width: 20/16rem;
+            height: 20/16rem;
+            background-image: url('../img/strum_down_teal.svg');
+        }
+        &.strum_up{
+            width: 20/16rem;
+            height: 20/16rem;
+            background-image: url('../img/strum_up_teal.svg');
+        }
+        &.strum_blank{
+            width: 20/16rem;
+            height: 20/16rem;
+            background-image: url('../img/strum_blank_teal.svg');
+        }
+        &.strum_mute{
+            width: 10/16rem;
+            height: 10/16rem;
+            margin-top: 4/16rem;
+            background-image: url('../img/strum_mute_teal.svg');
+        }
+        &.strum_accent{
+            width: 10/16rem;
+            height: 10/16rem;
+            margin-top: 4/16rem;
+            background-image: url('../img/strum_accent_teal.svg');
+        }
+    }
+    &.strum .alpha {
+        justify-content: center;
+        flex-wrap: wrap;
+        & h4{
+            color:@color;
+            flex-basis: 100%;
+        }
+        button{
+            max-width: 44/16rem;
+        }
+    }
 }
