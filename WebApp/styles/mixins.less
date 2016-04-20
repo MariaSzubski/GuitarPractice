@@ -27,6 +27,11 @@ H6: Description
 
 //                          GRADIENT BACKGROUNDS
 
+.gradient(@_){
+    min-height: 100%;
+    height: auto;
+}
+
 .gradient(gray){
     background: linear-gradient(55deg, #000, #37474F);
 }
@@ -143,9 +148,17 @@ H6: Description
     .f-roboto;
     font-size: 60/16em;
     font-weight: 400;
-    color:@white;
+    color:white;
     text-align: center;
     -webkit-font-smoothing: antialiased;
+}
+
+.f-counter{
+    .f-roboto;
+    font-size: 80/16em;
+    color: @black;
+    letter-spacing: 460/1000em;
+    padding-left: 600/1000em;
 }
 
 .f-axis(@color:@black){
@@ -159,36 +172,8 @@ H6: Description
 
 
 
-//                             FIX THIS
-.f-counter(lg){
-    font-size: 80/16em;
-}
-
-.f-counter(sm){
-    font-size: 60/16em;
-}
-
-.f-counter(@_, @color){
-    .f-roboto;
-    color: @color;
-}
-
-&::placeholder{
-    color: fade(@white, 30%);
-}
-&::-webkit-input-placeholder{
-    color: fade(@white, 30%);
-}
-&::-moz-placeholder{
-    color: fade(@white, 30%);
-}
-&::-ms-input-placeholder{
-    color: fade(@white, 30%);
-}
-
-
-
 //                          BUTTONS
+
 .a-button(@color){
     border: 3px solid @color;
     border-radius: 50%;
