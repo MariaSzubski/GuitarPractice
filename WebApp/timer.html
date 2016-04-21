@@ -5,7 +5,7 @@
         <title>Guitar Practice</title>
         <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title">
     </head>
-    <body class="bg_primary">
+    <body class="bg_primary" id="exercises">
 
         <header class="chordHeader">
             <h1>First : Second</h1>
@@ -19,8 +19,8 @@
             <img src="img/track.svg" alt="">
             <canvas id="arc"></canvas>
             <div id="control">
-                <p>1:00</p>
-                <img src="img/play.svg" id="toggleBtn" alt="Start Timer">
+                <p id="n_timer">1:00</p>
+                <img src="img/play.svg" id="toggle_btn" alt="Start Timer">
             </div>
         </section>
 
@@ -105,5 +105,6 @@
                 <img src="img/page.svg" alt="Page 3" class="active">
             </div>
         </section>
+        <script src="scripts/scripts.js"></script>
     </body>
 </html>
