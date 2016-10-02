@@ -254,10 +254,22 @@ function changeSong(){
 
 	}
 
+
+
 	function defineStrum(b){
-		for (var l = 0; l < getSong.s_strum[b].length; l++){
-			c_1 = getSong.s_strum[b].charAt(l);
-			c_1_sub = getSong.s_strum_sub[b].charAt(l);
+		switch(true){
+			case typeof(getSong.s_strum_sub) === 'string':
+				for (var l = 0; l < getSong.s_strum[b].length; l++){
+					c_1 = getSong.s_strum[b].charAt(l);
+					c_1_sub = '&nbsp';
+				}
+				break;
+			case typeof(getSong.s_strum_sub) === 'object':
+				for (var l = 0; l < getSong.s_strum[b].length; l++){
+					c_1 = getSong.s_strum[b].charAt(l);
+					c_1_sub = getSong.s_strum_sub[b].charAt(l);
+				}
+				break;
 		}
 	}
 
@@ -268,6 +280,7 @@ function changeSong(){
 		c_2 = getSong.s_1[b].charAt(1);
 		c_3 = getSong.s_1[b].charAt(2);
 		c_4 = getSong.s_1[b].charAt(3);
+		console.log(c_1);
 		switch(true){
 			case typeof(getSong.s_1_sub) === 'string':
 				c_1_sub = '&nbsp;';
@@ -283,6 +296,8 @@ function changeSong(){
 				break;
 		}
 	}
+
+
 	function defineBar2(b){
 		c_1 = getSong.s_2[b].charAt(0);
 		c_2 = getSong.s_2[b].charAt(1);
@@ -303,5 +318,4 @@ function changeSong(){
 				break;
 		}
 	}
-
 };

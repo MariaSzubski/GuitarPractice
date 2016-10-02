@@ -5,7 +5,7 @@
         <title>Guitar Practice</title>
         <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title">
     </head>
-    <body class="bg_primary">
+    <body class="bg_primary" id="list">
 
         <header>
             <h1>Finger Exercises</h1>
@@ -16,12 +16,12 @@
         </header>
 
         <section id="chordList">
-            <nav>
+            <nav id="fitler">
                 <h4>Sort By <span id="sortType">Record</span> | <span id="sortOrder">Highest to Lowest</span></h4>
                 <div id="sortOverlay">
                     <label class="header">Sort By</label>
                     <label class="radio">
-                        <input type="radio" value="Record" checked name="sortBy">Record
+                        <input type="radio" value="Record" checked name="sortBy">Testing
                     </label>
                     <label class="radio">
                         <input type="radio" value="Alphabetical" name="sortBy">Alphabetical
@@ -70,5 +70,6 @@
             &copy; Maria Szubski 2016
         </footer>
 
+        <script src="scripts/modules/list.js"></script>
     </body>
 </html>

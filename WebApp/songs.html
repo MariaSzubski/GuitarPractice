@@ -5,7 +5,7 @@
         <title>Guitar Practice</title>
         <link rel="stylesheet" href="styles/styles.css" media="screen" title="no title">
     </head>
-    <body class="bg_primary">
+    <body class="bg_primary" id="list">
 
         <header>
             <h1>Song List</h1>
@@ -15,6 +15,25 @@
         </header>
 
         <section id="songList">
+            <nav id="fitler">
+                <h4>Sort By <span id="sortType">Record</span> | <span id="sortOrder">Highest to Lowest</span></h4>
+                <div id="sortOverlay">
+                    <label class="header">Sort By</label>
+                    <label class="radio">
+                        <input type="radio" value="Record" checked name="sortBy">Testing
+                    </label>
+                    <label class="radio">
+                        <input type="radio" value="Alphabetical" name="sortBy">Alphabetical
+                    </label>
+                    <label class="header">Sort Order</label>
+                    <label class="radio">
+                        <input type="radio" value="A to Z" checked name="sortOrder">A to Z
+                    </label>
+                    <label class="radio">
+                        <input type="radio" value="Z to A" name="sortOrder">Z to A
+                    </label>
+                </div>
+            </nav>
             <ul class="songs list">
                 <li>
                     <a href="song_detail.html">
@@ -82,6 +101,6 @@
         <footer>
             &copy; Maria Szubski 2016
         </footer>
-
+        <script src="scripts/modules/list.js"></script>
     </body>
 </html>
