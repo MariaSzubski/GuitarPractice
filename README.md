@@ -1,15 +1,19 @@
-#Guitar Practice Log
+# Guitar Practice Log
 
-Guitar Practice Log is a web app demo to track guitar skill progress. Here are the features I'm planning to include in the final version:
+Guitar Practice Log is a web app demo to track guitar skill progress.
 
-##Features
-######Chord Change Timer
+## Design Concepts
+- [InVision Design Board](https://projects.invisionapp.com/boards/KT37Z36ECUAVD/)
+- [InVision Protoype](https://invis.io/DMBEWND49)
+
+## Planned Features
+###### Chord Change Timer
 - Start and stop a 1 minute timer.
 - Track your maximum number changes between a set of chords in 1 minute.
 - Add new sets of chord changes and your skills increase.
 - Chart progress over time.
 
-######Song List
+###### Song List
 - Song Details:
     - Chord progressions
     - Strum patterns
@@ -17,7 +21,7 @@ Guitar Practice Log is a web app demo to track guitar skill progress. Here are t
     - BPM
 - Add new songs to your list.
 
-##Technology
+## Technology
 - HTML5 semantic markup, CSS3 styling
     - Responsive layouts
     - Drag and drop elements
