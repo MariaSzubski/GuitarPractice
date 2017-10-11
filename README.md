@@ -1,3 +1,5 @@
+![Style Guide Responsive Layout](https://github.com/MariaSzubski/mariaszubski.github.io/blob/master/showcase_guitar-practice.png)
+
 # Guitar Practice Log
 
 Guitar Practice Log is a web app demo to track guitar skill progress.
